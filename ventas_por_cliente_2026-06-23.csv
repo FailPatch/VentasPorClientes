@@ -1,0 +1,600 @@
+cliente_id,cliente,dni,email,ciudad,pais,tienda,estado,cantidad_ventas,total_vendido
+526,KARL SEAL,40000526,KARL.SEAL@sakilacustomer.org,Cape Coral,United States,2,activo,45,221.55
+148,ELEANOR HUNT,40000148,ELEANOR.HUNT@sakilacustomer.org,Saint-Denis,Réunion,1,activo,46,216.54
+144,CLARA SHAW,40000144,CLARA.SHAW@sakilacustomer.org,Molodetšno,Belarus,1,activo,42,195.58
+137,RHONDA KENNEDY,40000137,RHONDA.KENNEDY@sakilacustomer.org,Apeldoorn,Netherlands,2,activo,39,194.61
+178,MARION SNYDER,40000178,MARION.SNYDER@sakilacustomer.org,Santa Bárbara d´Oeste,Brazil,2,activo,39,194.61
+459,TOMMY COLLAZO,40000459,TOMMY.COLLAZO@sakilacustomer.org,Qomsheh,Iran,1,activo,38,186.62
+469,WESLEY BULL,40000469,WESLEY.BULL@sakilacustomer.org,Ourense (Orense),Spain,2,activo,40,177.6
+468,TIM CARY,40000468,TIM.CARY@sakilacustomer.org,Bijapur,India,1,activo,39,175.61
+236,MARCIA DEAN,40000236,MARCIA.DEAN@sakilacustomer.org,Tanza,Philippines,1,activo,42,175.58
+181,ANA BRADLEY,40000181,ANA.BRADLEY@sakilacustomer.org,Memphis,United States,2,activo,34,174.66
+176,JUNE CARROLL,40000176,JUNE.CARROLL@sakilacustomer.org,Skikda,Algeria,1,activo,37,173.63
+50,DIANE COLLINS,40000050,DIANE.COLLINS@sakilacustomer.org,Omdurman,Sudan,1,activo,35,169.65
+259,LENA JENSEN,40000259,LENA.JENSEN@sakilacustomer.org,Halisahar,India,2,activo,32,168.68
+522,ARNOLD HAVENS,40000522,ARNOLD.HAVENS@sakilacustomer.org,Santa Rosa,Philippines,2,activo,33,167.67
+410,CURTIS IRBY,40000410,CURTIS.IRBY@sakilacustomer.org,Richmond Hill,Canada,2,activo,38,167.62
+403,MIKE WAY,40000403,MIKE.WAY@sakilacustomer.org,Valparai,India,1,activo,35,166.65
+295,DAISY BATES,40000295,DAISY.BATES@sakilacustomer.org,Kolpino,Russian Federation,1,activo,38,162.62
+209,TONYA CHAPMAN,40000209,TONYA.CHAPMAN@sakilacustomer.org,Bhilwara,India,2,activo,32,161.68
+373,LOUIS LEONE,40000373,LOUIS.LEONE@sakilacustomer.org,Tanauan,Philippines,1,activo,35,161.65
+470,GORDON ALLARD,40000470,GORDON.ALLARD@sakilacustomer.org,Hodeida,Yemen,1,activo,32,160.68
+187,BRITTANY RILEY,40000187,BRITTANY.RILEY@sakilacustomer.org,Sumy,Ukraine,2,activo,28,159.72
+550,GUY BROWNLEE,40000550,GUY.BROWNLEE@sakilacustomer.org,Zhoushan,China,2,activo,32,159.68
+462,WARREN SHERROD,40000462,WARREN.SHERROD@sakilacustomer.org,Usolje-Sibirskoje,Russian Federation,2,activo,33,159.67
+267,MARGIE WADE,40000267,MARGIE.WADE@sakilacustomer.org,Lengshuijiang,China,1,activo,36,159.64
+293,MAE FLETCHER,40000293,MAE.FLETCHER@sakilacustomer.org,Donostia-San Sebastián,Spain,2,activo,31,158.69
+372,STEVE MACKENZIE,40000372,STEVE.MACKENZIE@sakilacustomer.org,Probolinggo,Indonesia,2,activo,34,158.66
+273,PRISCILLA LOWE,40000273,PRISCILLA.LOWE@sakilacustomer.org,Salamanca,Mexico,2,activo,35,157.65
+368,HARRY ARCE,40000368,HARRY.ARCE@sakilacustomer.org,Najafabad,Iran,1,inactivo,35,157.65
+1,MARY SMITH,40000001,MARY.SMITH@sakilacustomer.org,Sasebo,Japan,1,activo,45,157.55
+346,ARTHUR SIMPKINS,40000346,ARTHUR.SIMPKINS@sakilacustomer.org,Maikop,Russian Federation,1,activo,32,155.68
+21,MICHELLE CLARK,40000021,MICHELLE.CLARK@sakilacustomer.org,Tangail,Bangladesh,1,activo,35,155.65
+75,TAMMY SANDERS,40000075,TAMMY.SANDERS@sakilacustomer.org,Changhwa,Taiwan,2,activo,41,155.59
+7,MARIA MILLER,40000007,MARIA.MILLER@sakilacustomer.org,Kragujevac,Yugoslavia,1,activo,34,154.66
+197,SUE PETERS,40000197,SUE.PETERS@sakilacustomer.org,Changzhou,China,2,activo,40,154.6
+119,SHERRY MARSHALL,40000119,SHERRY.MARSHALL@sakilacustomer.org,Shubra al-Khayma,Egypt,1,activo,34,153.66
+532,NEIL RENNER,40000532,NEIL.RENNER@sakilacustomer.org,Cam Ranh,Vietnam,2,activo,32,152.68
+390,SHAWN HEATON,40000390,SHAWN.HEATON@sakilacustomer.org,Nakhon Sawan,Thailand,1,activo,33,152.67
+26,JESSICA HALL,40000026,JESSICA.HALL@sakilacustomer.org,Città del Vaticano,Holy See (Vatican City State),2,activo,34,152.66
+274,NAOMI JENNINGS,40000274,NAOMI.JENNINGS@sakilacustomer.org,Karnal,India,1,activo,35,152.65
+506,LESLIE SEWARD,40000506,LESLIE.SEWARD@sakilacustomer.org,Pontianak,Indonesia,2,activo,35,152.65
+366,BRANDON HUEY,40000366,BRANDON.HUEY@sakilacustomer.org,Balikesir,Turkey,1,activo,37,152.63
+454,ALEX GRESHAM,40000454,ALEX.GRESHAM@sakilacustomer.org,Uruapan,Mexico,2,activo,33,151.67
+211,STACEY MONTGOMERY,40000211,STACEY.MONTGOMERY@sakilacustomer.org,Fuyu,China,1,activo,34,151.66
+196,ALMA AUSTIN,40000196,ALMA.AUSTIN@sakilacustomer.org,Mannheim,Germany,1,activo,35,151.65
+439,ALEXANDER FENNELL,40000439,ALEXANDER.FENNELL@sakilacustomer.org,Bergamo,Italy,2,activo,36,151.64
+257,MARSHA DOUGLAS,40000257,MARSHA.DOUGLAS@sakilacustomer.org,Beira,Mozambique,2,activo,37,151.63
+360,RALPH MADRIGAL,40000360,RALPH.MADRIGAL@sakilacustomer.org,Arecibo,Puerto Rico,2,activo,34,150.66
+371,BILLY POULIN,40000371,BILLY.POULIN@sakilacustomer.org,Cabuyao,Philippines,1,activo,35,149.65
+513,DUANE TUBBS,40000513,DUANE.TUBBS@sakilacustomer.org,Yangor,Nauru,2,activo,31,148.69
+86,JACQUELINE LONG,40000086,JACQUELINE.LONG@sakilacustomer.org,Songkhla,Thailand,2,activo,33,148.67
+309,CHRISTOPHER GRECO,40000309,CHRISTOPHER.GRECO@sakilacustomer.org,Brescia,Italy,1,activo,31,147.69
+204,ROSEMARY SCHMIDT,40000204,ROSEMARY.SCHMIDT@sakilacustomer.org,Usak,Turkey,1,activo,35,147.65
+5,ELIZABETH BROWN,40000005,ELIZABETH.BROWN@sakilacustomer.org,Nantou,Taiwan,1,activo,39,147.61
+103,GLADYS HAMILTON,40000103,GLADYS.HAMILTON@sakilacustomer.org,Ilorin,Nigeria,1,activo,31,146.69
+479,ZACHARY HITE,40000479,ZACHARY.HITE@sakilacustomer.org,Akron,United States,1,activo,31,146.69
+348,ROGER QUINTANILLA,40000348,ROGER.QUINTANILLA@sakilacustomer.org,Hsichuh,Taiwan,2,activo,36,146.64
+87,WANDA PATTERSON,40000087,WANDA.PATTERSON@sakilacustomer.org,Sincelejo,Colombia,1,activo,30,145.7
+362,NICHOLAS BARFIELD,40000362,NICHOLAS.BARFIELD@sakilacustomer.org,Belém,Brazil,1,activo,32,145.68
+172,BERNICE WILLIS,40000172,BERNICE.WILLIS@sakilacustomer.org,Batman,Turkey,1,activo,33,145.67
+436,TROY QUIGLEY,40000436,TROY.QUIGLEY@sakilacustomer.org,Vancouver,Canada,1,activo,30,144.7
+277,OLGA JIMENEZ,40000277,OLGA.JIMENEZ@sakilacustomer.org,Ogbomosho,Nigeria,2,activo,32,144.68
+237,TANYA GILBERT,40000237,TANYA.GILBERT@sakilacustomer.org,Naju,South Korea,1,activo,33,144.67
+66,JANICE WARD,40000066,JANICE.WARD@sakilacustomer.org,Malmö,Sweden,2,activo,34,144.66
+337,JERRY JORDON,40000337,JERRY.JORDON@sakilacustomer.org,Onomichi,Japan,1,activo,29,143.71
+363,ROY WHITING,40000363,ROY.WHITING@sakilacustomer.org,Nyeri,Kenya,2,activo,29,143.71
+120,SYLVIA ORTIZ,40000120,SYLVIA.ORTIZ@sakilacustomer.org,Dos Quebradas,Colombia,2,activo,32,143.68
+289,VIOLET RODRIQUEZ,40000289,VIOLET.RODRIQUEZ@sakilacustomer.org,Kowloon and New Kowloon,Hong Kong,1,activo,30,142.7
+347,RYAN SALISBURY,40000347,RYAN.SALISBURY@sakilacustomer.org,Daugavpils,Latvia,2,activo,30,142.7
+46,CATHERINE CAMPBELL,40000046,CATHERINE.CAMPBELL@sakilacustomer.org,Moscow,Russian Federation,2,activo,34,142.66
+239,MINNIE ROMERO,40000239,MINNIE.ROMERO@sakilacustomer.org,Ciomas,Indonesia,2,activo,34,142.66
+39,DEBRA NELSON,40000039,DEBRA.NELSON@sakilacustomer.org,Vila Velha,Brazil,1,activo,29,141.71
+472,GREG ROBINS,40000472,GREG.ROBINS@sakilacustomer.org,Nam Dinh,Vietnam,1,activo,30,141.7
+78,LORI WOOD,40000078,LORI.WOOD@sakilacustomer.org,Rae Bareli,India,1,activo,31,141.69
+84,SARA PERRY,40000084,SARA.PERRY@sakilacustomer.org,Atlixco,Mexico,2,activo,33,141.67
+533,JESSIE MILAM,40000533,JESSIE.MILAM@sakilacustomer.org,Binzhou,China,1,activo,33,141.67
+566,CASEY MENA,40000566,CASEY.MENA@sakilacustomer.org,Tokat,Turkey,1,activo,34,141.66
+198,ELSIE KELLEY,40000198,ELSIE.KELLEY@sakilacustomer.org,Ikerre,Nigeria,2,activo,37,141.63
+494,RAMON CHOATE,40000494,RAMON.CHOATE@sakilacustomer.org,Ríobamba,Ecuador,2,activo,31,140.69
+242,GLENDA FRAZIER,40000242,GLENDA.FRAZIER@sakilacustomer.org,Qinhuangdao,China,1,activo,32,140.68
+29,ANGELA HERNANDEZ,40000029,ANGELA.HERNANDEZ@sakilacustomer.org,Shimonoseki,Japan,2,activo,36,140.64
+146,JAMIE RICE,40000146,JAMIE.RICE@sakilacustomer.org,Sterling Heights,United States,1,activo,29,139.71
+467,ALVIN DELOACH,40000467,ALVIN.DELOACH@sakilacustomer.org,Cuauhtémoc,Mexico,2,activo,29,139.71
+404,STANLEY SCROGGINS,40000404,STANLEY.SCROGGINS@sakilacustomer.org,Omiya,Japan,2,activo,30,139.7
+484,ROBERTO VU,40000484,ROBERTO.VU@sakilacustomer.org,Yinchuan,China,1,activo,30,139.7
+114,GRACE ELLIS,40000114,GRACE.ELLIS@sakilacustomer.org,Duisburg,Germany,2,activo,33,139.67
+576,MORRIS MCCARTER,40000576,MORRIS.MCCARTER@sakilacustomer.org,Fengshan,Taiwan,2,activo,34,139.66
+349,JOE GILLILAND,40000349,JOE.GILLILAND@sakilacustomer.org,Imus,Philippines,2,activo,29,138.71
+482,MAURICE CRAWLEY,40000482,MAURICE.CRAWLEY@sakilacustomer.org,Coatzacoalcos,Mexico,1,inactivo,29,138.71
+306,CHARLES KOWALSKI,40000306,CHARLES.KOWALSKI@sakilacustomer.org,Sungai Petani,Malaysia,1,activo,32,138.68
+51,ALICE STEWART,40000051,ALICE.STEWART@sakilacustomer.org,Fontana,United States,1,activo,33,138.67
+502,BRETT CORNWELL,40000502,BRETT.CORNWELL@sakilacustomer.org,Siliguri (Shiliguri),India,1,activo,34,138.66
+80,MARILYN ROSS,40000080,MARILYN.ROSS@sakilacustomer.org,Ife,Nigeria,1,activo,30,137.7
+210,ELLA OLIVER,40000210,ELLA.OLIVER@sakilacustomer.org,Aden,Yemen,2,activo,31,137.69
+300,JOHN FARNSWORTH,40000300,JOHN.FARNSWORTH@sakilacustomer.org,Parbhani,India,1,activo,31,137.69
+102,CRYSTAL FORD,40000102,CRYSTAL.FORD@sakilacustomer.org,Ashdod,Israel,1,activo,33,137.67
+207,GERTRUDE CASTILLO,40000207,GERTRUDE.CASTILLO@sakilacustomer.org,Nuuk,Greenland,1,activo,34,137.66
+200,JEANNE LAWSON,40000200,JEANNE.LAWSON@sakilacustomer.org,Ashgabat,Turkmenistan,2,activo,27,136.73
+380,RUSSELL BRINSON,40000380,RUSSELL.BRINSON@sakilacustomer.org,Tychy,Poland,1,activo,36,136.64
+3,LINDA WILLIAMS,40000003,LINDA.WILLIAMS@sakilacustomer.org,Athenai,Greece,1,activo,26,135.74
+285,MIRIAM MCKINNEY,40000285,MIRIAM.MCKINNEY@sakilacustomer.org,Otsu,Japan,1,activo,26,135.74
+558,JIMMIE EGGLESTON,40000558,JIMMIE.EGGLESTON@sakilacustomer.org,Wroclaw,Poland,1,inactivo,28,135.72
+448,MIGUEL BETANCOURT,40000448,MIGUEL.BETANCOURT@sakilacustomer.org,Erlangen,Germany,1,activo,29,135.71
+56,GLORIA COOK,40000056,GLORIA.COOK@sakilacustomer.org,Papeete,French Polynesia,1,activo,30,135.7
+334,RAYMOND MCWHORTER,40000334,RAYMOND.MCWHORTER@sakilacustomer.org,Sumqayit,Azerbaijan,2,activo,30,135.7
+279,DIANNE SHELTON,40000279,DIANNE.SHELTON@sakilacustomer.org,Tabriz,Iran,2,activo,31,135.69
+125,ETHEL WEBB,40000125,ETHEL.WEBB@sakilacustomer.org,Boksburg,South Africa,1,activo,32,135.68
+535,JAVIER ELROD,40000535,JAVIER.ELROD@sakilacustomer.org,NDjamna,Chad,1,activo,32,135.68
+168,REGINA BERRY,40000168,REGINA.BERRY@sakilacustomer.org,Jinchang,China,1,activo,34,135.66
+591,KENT ARSENAULT,40000591,KENT.ARSENAULT@sakilacustomer.org,Juiz de Fora,Brazil,1,activo,27,134.73
+307,JOSEPH JOY,40000307,JOSEPH.JOY@sakilacustomer.org,Angra dos Reis,Brazil,2,activo,30,134.7
+15,HELEN HARRIS,40000015,HELEN.HARRIS@sakilacustomer.org,Bhopal,India,1,activo,32,134.68
+89,JULIA FLORES,40000089,JULIA.FLORES@sakilacustomer.org,La Plata,Argentina,1,activo,32,134.68
+520,MITCHELL WESTMORELAND,40000520,MITCHELL.WESTMORELAND@sakilacustomer.org,Nha Trang,Vietnam,2,activo,32,134.68
+569,DAVE GARDINER,40000569,DAVE.GARDINER@sakilacustomer.org,Leshan,China,2,activo,32,134.68
+438,BARRY LOVELACE,40000438,BARRY.LOVELACE@sakilacustomer.org,Kitwe,Zambia,1,activo,33,134.67
+473,JORGE OLIVARES,40000473,JORGE.OLIVARES@sakilacustomer.org,Lhokseumawe,Indonesia,2,activo,34,134.66
+433,DON BONE,40000433,DON.BONE@sakilacustomer.org,Naçala-Porto,Mozambique,1,activo,25,133.75
+59,CHERYL MURPHY,40000059,CHERYL.MURPHY@sakilacustomer.org,Mysore,India,1,activo,27,133.73
+92,TINA SIMMONS,40000092,TINA.SIMMONS@sakilacustomer.org,Goiânia,Brazil,2,activo,28,133.72
+504,NATHANIEL ADAM,40000504,NATHANIEL.ADAM@sakilacustomer.org,Joliet,United States,1,activo,28,133.72
+179,DANA HART,40000179,DANA.HART@sakilacustomer.org,Kirovo-Tšepetsk,Russian Federation,1,activo,29,133.71
+265,JENNIE TERRY,40000265,JENNIE.TERRY@sakilacustomer.org,Olomouc,Czech Republic,2,activo,29,133.71
+112,ROSA REYNOLDS,40000112,ROSA.REYNOLDS@sakilacustomer.org,Lancaster,United States,2,activo,30,133.7
+221,BESSIE MORRISON,40000221,BESSIE.MORRISON@sakilacustomer.org,Syrakusa,Italy,1,activo,28,132.72
+316,STEVEN CURLEY,40000316,STEVEN.CURLEY@sakilacustomer.org,Miraj,India,1,activo,29,132.71
+108,TRACY COLE,40000108,TRACY.COLE@sakilacustomer.org,Huixquilucan,Mexico,1,activo,30,132.7
+319,RONALD WEINER,40000319,RONALD.WEINER@sakilacustomer.org,San Felipe del Progreso,Mexico,2,activo,30,132.7
+560,JORDAN ARCHULETA,40000560,JORDAN.ARCHULETA@sakilacustomer.org,Avellaneda,Argentina,1,activo,30,132.7
+245,COURTNEY DAY,40000245,COURTNEY.DAY@sakilacustomer.org,Uijongbu,South Korea,1,activo,32,132.68
+13,KAREN JACKSON,40000013,KAREN.JACKSON@sakilacustomer.org,Osmaniye,Turkey,2,activo,27,131.73
+2,PATRICIA JOHNSON,40000002,PATRICIA.JOHNSON@sakilacustomer.org,San Bernardino,United States,1,activo,28,131.72
+299,JAMES GANNON,40000299,JAMES.GANNON@sakilacustomer.org,Hiroshima,Japan,2,activo,30,131.7
+314,GEORGE LINTON,40000314,GEORGE.LINTON@sakilacustomer.org,Sorocaba,Brazil,1,activo,33,131.67
+82,KATHRYN COLEMAN,40000082,KATHRYN.COLEMAN@sakilacustomer.org,Simferopol,Ukraine,1,activo,26,130.74
+594,EDUARDO HIATT,40000594,EDUARDO.HIATT@sakilacustomer.org,Jining,China,1,activo,27,130.73
+49,JOYCE EDWARDS,40000049,JOYCE.EDWARDS@sakilacustomer.org,Jedda,Saudi Arabia,2,activo,28,130.72
+154,MICHELE GRANT,40000154,MICHELE.GRANT@sakilacustomer.org,Yuncheng,China,2,activo,30,130.7
+141,DEBBIE REYES,40000141,DEBBIE.REYES@sakilacustomer.org,Fukuyama,Japan,1,activo,32,130.68
+342,HAROLD MARTINO,40000342,HAROLD.MARTINO@sakilacustomer.org,Boa Vista,Brazil,1,activo,32,130.68
+497,GILBERT SLEDGE,40000497,GILBERT.SLEDGE@sakilacustomer.org,York,United Kingdom,2,activo,28,129.72
+589,TRACY HERRMANN,40000589,TRACY.HERRMANN@sakilacustomer.org,Loja,Ecuador,1,activo,28,129.72
+71,KATHY JAMES,40000071,KATHY.JAMES@sakilacustomer.org,Baybay,Philippines,1,activo,30,129.7
+269,CASSANDRA WALTERS,40000269,CASSANDRA.WALTERS@sakilacustomer.org,Salinas,United States,1,activo,30,129.7
+296,RAMONA HALE,40000296,RAMONA.HALE@sakilacustomer.org,Patiala,India,2,activo,30,129.7
+584,SALVADOR TEEL,40000584,SALVADOR.TEEL@sakilacustomer.org,Banjul,Gambia,2,activo,30,129.7
+35,VIRGINIA GREEN,40000035,VIRGINIA.GREEN@sakilacustomer.org,Toulouse,France,2,activo,32,129.68
+244,VIOLA HANSON,40000244,VIOLA.HANSON@sakilacustomer.org,Lapu-Lapu,Philippines,2,activo,32,129.68
+354,JUSTIN NGO,40000354,JUSTIN.NGO@sakilacustomer.org,Santo André,Brazil,2,activo,36,129.64
+434,EDDIE TOMLIN,40000434,EDDIE.TOMLIN@sakilacustomer.org,Ozamis,Philippines,1,activo,27,128.73
+322,JASON MORRISSEY,40000322,JASON.MORRISSEY@sakilacustomer.org,Bahía Blanca,Argentina,1,activo,28,128.72
+54,TERESA ROGERS,40000054,TERESA.ROGERS@sakilacustomer.org,Iwakuni,Japan,1,activo,29,128.71
+131,MONICA HICKS,40000131,MONICA.HICKS@sakilacustomer.org,Mukatševe,Ukraine,2,activo,30,128.7
+297,SHERRI RHODES,40000297,SHERRI.RHODES@sakilacustomer.org,Ahmadnagar,India,1,activo,33,128.67
+451,JIM REA,40000451,JIM.REA@sakilacustomer.org,El Fuerte,Mexico,1,activo,33,128.67
+508,MILTON HOWLAND,40000508,MILTON.HOWLAND@sakilacustomer.org,Vijayawada,India,2,activo,25,127.75
+45,JANET PHILLIPS,40000045,JANET.PHILLIPS@sakilacustomer.org,Antofagasta,Chile,1,activo,27,127.73
+32,AMY LOPEZ,40000032,AMY.LOPEZ@sakilacustomer.org,Jhansi,India,1,activo,29,127.71
+253,TERRY CARLSON,40000253,TERRY.CARLSON@sakilacustomer.org,Miyakonojo,Japan,1,activo,29,127.71
+302,MICHAEL SILVERMAN,40000302,MICHAEL.SILVERMAN@sakilacustomer.org,Tiefa,China,1,activo,29,127.71
+339,WALTER PERRYMAN,40000339,WALTER.PERRYMAN@sakilacustomer.org,Xinxiang,China,2,activo,30,127.7
+128,MARJORIE TUCKER,40000128,MARJORIE.TUCKER@sakilacustomer.org,Jastrzebie-Zdrój,Poland,1,activo,32,127.68
+329,FRANK WAGGONER,40000329,FRANK.WAGGONER@sakilacustomer.org,Jamalpur,Bangladesh,2,activo,32,127.68
+38,MARTHA GONZALEZ,40000038,MARTHA.GONZALEZ@sakilacustomer.org,Chisinau,Moldova,1,activo,34,127.66
+147,JOANNE ROBERTSON,40000147,JOANNE.ROBERTSON@sakilacustomer.org,Urawa,Japan,2,activo,34,127.66
+206,TERRI VASQUEZ,40000206,TERRI.VASQUEZ@sakilacustomer.org,Blumenau,Brazil,1,activo,27,126.73
+426,BRADLEY MOTLEY,40000426,BRADLEY.MOTLEY@sakilacustomer.org,Purnea (Purnia),India,1,activo,27,126.73
+284,SONIA GREGORY,40000284,SONIA.GREGORY@sakilacustomer.org,Benin City,Nigeria,1,activo,28,126.72
+515,ANDRE RAPP,40000515,ANDRE.RAPP@sakilacustomer.org,Coquimbo,Chile,1,activo,28,126.72
+565,JAIME NETTLES,40000565,JAIME.NETTLES@sakilacustomer.org,Huánuco,Peru,2,activo,29,126.71
+575,ISAAC OGLESBY,40000575,ISAAC.OGLESBY@sakilacustomer.org,Cuernavaca,Mexico,2,activo,29,126.71
+107,FLORENCE WOODS,40000107,FLORENCE.WOODS@sakilacustomer.org,Merlo,Argentina,1,activo,30,126.7
+27,SHIRLEY ALLEN,40000027,SHIRLEY.ALLEN@sakilacustomer.org,Davao,Philippines,2,activo,31,126.69
+122,THELMA MURRAY,40000122,THELMA.MURRAY@sakilacustomer.org,Lima,Peru,1,activo,32,126.68
+158,VERONICA STONE,40000158,VERONICA.STONE@sakilacustomer.org,Greensboro,United States,1,activo,32,126.68
+19,RUTH MARTINEZ,40000019,RUTH.MARTINEZ@sakilacustomer.org,Kimberley,South Africa,1,activo,24,125.76
+389,ALAN KAHN,40000389,ALAN.KAHN@sakilacustomer.org,Emeishan,China,1,activo,26,124.74
+491,RICK MATTOX,40000491,RICK.MATTOX@sakilacustomer.org,Mit Ghamr,Egypt,2,activo,27,124.73
+400,BRYAN HARDISON,40000400,BRYAN.HARDISON@sakilacustomer.org,Dallas,United States,2,activo,28,124.72
+388,CRAIG MORRELL,40000388,CRAIG.MORRELL@sakilacustomer.org,Cavite,Philippines,2,activo,30,124.7
+230,JOY GEORGE,40000230,JOY.GEORGE@sakilacustomer.org,Botosani,Romania,2,activo,33,124.67
+129,CARRIE PORTER,40000129,CARRIE.PORTER@sakilacustomer.org,Liaocheng,China,1,activo,34,124.66
+166,LYNN PAYNE,40000166,LYNN.PAYNE@sakilacustomer.org,Lilongwe,Malawi,1,activo,28,123.72
+268,NINA SOTO,40000268,NINA.SOTO@sakilacustomer.org,Palghat (Palakkad),India,1,activo,29,123.71
+499,MARC OUTLAW,40000499,MARC.OUTLAW@sakilacustomer.org,Brindisi,Italy,2,activo,30,123.7
+30,MELISSA KING,40000030,MELISSA.KING@sakilacustomer.org,Lungtan,Taiwan,1,activo,34,123.66
+510,BEN EASTER,40000510,BEN.EASTER@sakilacustomer.org,Kamyšin,Russian Federation,2,inactivo,26,122.74
+331,ERIC ROBERT,40000331,ERIC.ROBERT@sakilacustomer.org,Santa Fé,Argentina,1,activo,27,122.73
+276,BRANDY GRAVES,40000276,BRANDY.GRAVES@sakilacustomer.org,Warren,United States,1,activo,28,122.72
+163,CATHY SPENCER,40000163,CATHY.SPENCER@sakilacustomer.org,Kakamigahara,Japan,1,activo,29,122.71
+263,HILDA HOPKINS,40000263,HILDA.HOPKINS@sakilacustomer.org,Mandaluyong,Philippines,1,activo,29,122.71
+260,CHRISTY VARGAS,40000260,CHRISTY.VARGAS@sakilacustomer.org,Datong,China,1,activo,31,122.69
+406,NATHAN RUNYON,40000406,NATHAN.RUNYON@sakilacustomer.org,Charlotte Amalie,"Virgin Islands, U.S.",1,inactivo,32,122.68
+241,HEIDI LARSON,40000241,HEIDI.LARSON@sakilacustomer.org,Xi´angfan,China,2,inactivo,34,122.66
+571,JOHNNIE CHISHOLM,40000571,JOHNNIE.CHISHOLM@sakilacustomer.org,Plock,Poland,2,activo,24,121.76
+149,VALERIE BLACK,40000149,VALERIE.BLACK@sakilacustomer.org,Brockton,United States,1,activo,26,121.74
+356,GERALD FULTZ,40000356,GERALD.FULTZ@sakilacustomer.org,Satna,India,2,activo,30,121.7
+393,PHILIP CAUSEY,40000393,PHILIP.CAUSEY@sakilacustomer.org,Korolev,Russian Federation,1,activo,31,121.69
+416,JEFFERY PINSON,40000416,JEFFERY.PINSON@sakilacustomer.org,Dadu,Pakistan,2,activo,31,121.69
+311,PAUL TROUT,40000311,PAUL.TROUT@sakilacustomer.org,Kursk,Russian Federation,2,activo,23,120.77
+105,DAWN SULLIVAN,40000105,DAWN.SULLIVAN@sakilacustomer.org,Funafuti,Tuvalu,1,activo,26,120.74
+225,ARLENE HARVEY,40000225,ARLENE.HARVEY@sakilacustomer.org,Ambattur,India,1,activo,26,120.74
+423,ALFRED CASILLAS,40000423,ALFRED.CASILLAS@sakilacustomer.org,Sawhaj,Egypt,2,activo,26,120.74
+495,CHARLIE BESS,40000495,CHARLIE.BESS@sakilacustomer.org,Baiyin,China,2,activo,26,120.74
+573,BYRON BOX,40000573,BYRON.BOX@sakilacustomer.org,Zhezqazghan,Kazakstan,1,activo,29,120.71
+251,VICKIE BREWER,40000251,VICKIE.BREWER@sakilacustomer.org,Halle/Saale,Germany,2,activo,31,120.69
+170,BEATRICE ARNOLD,40000170,BEATRICE.ARNOLD@sakilacustomer.org,Udaipur,India,1,activo,26,119.74
+487,HECTOR POINDEXTER,40000487,HECTOR.POINDEXTER@sakilacustomer.org,Pjatigorsk,Russian Federation,2,activo,26,119.74
+421,LEE HAWKS,40000421,LEE.HAWKS@sakilacustomer.org,Pudukkottai,India,1,activo,27,119.73
+262,PATSY DAVIDSON,40000262,PATSY.DAVIDSON@sakilacustomer.org,Portoviejo,Ecuador,2,activo,28,119.72
+173,AUDREY RAY,40000173,AUDREY.RAY@sakilacustomer.org,Graz,Austria,1,activo,29,119.71
+23,SARAH LEWIS,40000023,SARAH.LEWIS@sakilacustomer.org,Liepaja,Latvia,2,activo,30,119.7
+336,JOSHUA MARK,40000336,JOSHUA.MARK@sakilacustomer.org,Rampur,India,1,activo,30,119.7
+340,PATRICK NEWSOM,40000340,PATRICK.NEWSOM@sakilacustomer.org,Hanoi,Vietnam,1,activo,31,119.69
+167,SALLY PIERCE,40000167,SALLY.PIERCE@sakilacustomer.org,Chandrapur,India,2,activo,32,119.68
+41,STEPHANIE MITCHELL,40000041,STEPHANIE.MITCHELL@sakilacustomer.org,Yerevan,Armenia,1,activo,25,118.75
+531,JAMIE WAUGH,40000531,JAMIE.WAUGH@sakilacustomer.org,Kuwana,Japan,2,activo,25,118.75
+280,TRACEY BARRETT,40000280,TRACEY.BARRETT@sakilacustomer.org,Owo,Nigeria,2,activo,27,118.73
+292,MISTY LAMBERT,40000292,MISTY.LAMBERT@sakilacustomer.org,Sharja,United Arab Emirates,2,activo,27,118.73
+16,SANDRA MARTIN,40000016,SANDRA.MARTIN@sakilacustomer.org,Southend-on-Sea,United Kingdom,2,inactivo,28,118.72
+266,NORA HERRERA,40000266,NORA.HERRERA@sakilacustomer.org,Salzburg,Austria,2,activo,28,118.72
+332,STEPHEN QUALLS,40000332,STEPHEN.QUALLS@sakilacustomer.org,Dhaka,Bangladesh,1,activo,28,118.72
+529,ERIK GUILLEN,40000529,ERIK.GUILLEN@sakilacustomer.org,Bhimavaram,India,2,activo,29,118.71
+442,LEROY BUSTAMANTE,40000442,LEROY.BUSTAMANTE@sakilacustomer.org,Tongliao,China,1,activo,32,118.68
+583,MARSHALL THORN,40000583,MARSHALL.THORN@sakilacustomer.org,Southampton,United Kingdom,1,activo,23,117.77
+490,SAM MCDUFFIE,40000490,SAM.MCDUFFIE@sakilacustomer.org,Sogamoso,Colombia,1,activo,24,117.76
+585,PERRY SWAFFORD,40000585,PERRY.SWAFFORD@sakilacustomer.org,Quilmes,Argentina,1,activo,24,117.76
+536,FERNANDO CHURCHILL,40000536,FERNANDO.CHURCHILL@sakilacustomer.org,Tonghae,South Korea,2,activo,25,117.75
+240,MARLENE WELCH,40000240,MARLENE.WELCH@sakilacustomer.org,Iwaki,Japan,1,activo,26,117.74
+286,VELMA LUCAS,40000286,VELMA.LUCAS@sakilacustomer.org,Effon-Alaiye,Nigeria,1,activo,27,117.73
+577,CLIFTON MALCOLM,40000577,CLIFTON.MALCOLM@sakilacustomer.org,Tanshui,Taiwan,2,activo,27,117.73
+14,BETTY WHITE,40000014,BETTY.WHITE@sakilacustomer.org,Citrus Heights,United States,2,activo,28,117.72
+126,ELLEN SIMPSON,40000126,ELLEN.SIMPSON@sakilacustomer.org,Poá,Brazil,1,activo,28,117.72
+386,TODD TAN,40000386,TODD.TAN@sakilacustomer.org,Kamjanets-Podilskyi,Ukraine,1,activo,29,117.71
+538,TED BREAUX,40000538,TED.BREAUX@sakilacustomer.org,Baicheng,China,2,activo,29,117.71
+42,CAROLYN PEREZ,40000042,CAROLYN.PEREZ@sakilacustomer.org,Pak Kret,Thailand,2,activo,30,117.7
+595,TERRENCE GUNDERSON,40000595,TERRENCE.GUNDERSON@sakilacustomer.org,Jinzhou,China,1,activo,30,117.7
+321,KEVIN SCHULER,40000321,KEVIN.SCHULER@sakilacustomer.org,Birgunj,Nepal,1,activo,22,116.78
+432,EDWIN BURK,40000432,EDWIN.BURK@sakilacustomer.org,Newcastle,South Africa,1,activo,23,116.77
+408,MANUEL MURRELL,40000408,MANUEL.MURRELL@sakilacustomer.org,Jaffna,Sri Lanka,1,activo,30,116.7
+214,KRISTIN JOHNSTON,40000214,KRISTIN.JOHNSTON@sakilacustomer.org,Sunnyvale,United States,1,activo,31,116.69
+446,THEODORE CULP,40000446,THEODORE.CULP@sakilacustomer.org,Uluberia,India,2,inactivo,31,116.69
+254,MAXINE SILVA,40000254,MAXINE.SILVA@sakilacustomer.org,Poços de Caldas,Brazil,2,activo,32,116.68
+304,DAVID ROYAL,40000304,DAVID.ROYAL@sakilacustomer.org,Callao,Peru,2,activo,26,115.74
+512,CECIL VINES,40000512,CECIL.VINES@sakilacustomer.org,London,United Kingdom,1,activo,26,115.74
+58,JEAN BELL,40000058,JEAN.BELL@sakilacustomer.org,Kuching,Malaysia,1,activo,27,115.73
+500,REGINALD KINDER,40000500,REGINALD.KINDER@sakilacustomer.org,Madiun,Indonesia,1,activo,28,115.72
+25,DEBORAH WALKER,40000025,DEBORAH.WALKER@sakilacustomer.org,Shikarpur,Pakistan,1,activo,29,115.71
+287,BECKY MILES,40000287,BECKY.MILES@sakilacustomer.org,Tambaram,India,2,activo,29,115.71
+481,HERMAN DEVORE,40000481,HERMAN.DEVORE@sakilacustomer.org,Mwanza,Tanzania,1,activo,29,115.71
+485,CLYDE TOBIAS,40000485,CLYDE.TOBIAS@sakilacustomer.org,Shaoguan,China,1,activo,29,115.71
+588,MARION OCAMPO,40000588,MARION.OCAMPO@sakilacustomer.org,Weifang,China,1,activo,29,115.71
+20,SHARON ROBINSON,40000020,SHARON.ROBINSON@sakilacustomer.org,Mardan,Pakistan,2,activo,30,115.7
+53,HEATHER MORRIS,40000053,HEATHER.MORRIS@sakilacustomer.org,Nagareyama,Japan,1,activo,30,115.7
+444,MARCUS HIDALGO,40000444,MARCUS.HIDALGO@sakilacustomer.org,Tartu,Estonia,2,activo,30,115.7
+503,ANGEL BARCLAY,40000503,ANGEL.BARCLAY@sakilacustomer.org,Ueda,Japan,1,activo,32,115.68
+427,JESUS MCCARTNEY,40000427,JESUS.MCCARTNEY@sakilacustomer.org,Guarujá,Brazil,2,activo,24,114.76
+343,DOUGLAS GRAF,40000343,DOUGLAS.GRAF@sakilacustomer.org,Mexicali,Mexico,1,activo,25,114.75
+44,MARIE TURNER,40000044,MARIE.TURNER@sakilacustomer.org,Lipetsk,Russian Federation,1,activo,26,114.74
+171,DOLORES WAGNER,40000171,DOLORES.WAGNER@sakilacustomer.org,Ipoh,Malaysia,2,activo,26,114.74
+220,CHARLENE ALVAREZ,40000220,CHARLENE.ALVAREZ@sakilacustomer.org,Zanzibar,Tanzania,2,activo,27,114.73
+57,EVELYN MORGAN,40000057,EVELYN.MORGAN@sakilacustomer.org,Vaduz,Liechtenstein,2,activo,28,114.72
+317,EDWARD BAUGH,40000317,EDWARD.BAUGH@sakilacustomer.org,Tórshavn,Faroe Islands,2,activo,28,114.72
+338,DENNIS GILMAN,40000338,DENNIS.GILMAN@sakilacustomer.org,Paarl,South Africa,1,activo,28,114.72
+457,BILL GAVIN,40000457,BILL.GAVIN@sakilacustomer.org,Rockford,United States,2,activo,28,114.72
+186,HOLLY FOX,40000186,HOLLY.FOX@sakilacustomer.org,Haldia,India,2,activo,31,114.69
+323,MATTHEW MAHAN,40000323,MATTHEW.MAHAN@sakilacustomer.org,Cuautla,Mexico,2,activo,31,114.69
+22,LAURA RODRIGUEZ,40000022,LAURA.RODRIGUEZ@sakilacustomer.org,Salé,Morocco,1,activo,22,113.78
+582,ANDY VANHORN,40000582,ANDY.VANHORN@sakilacustomer.org,Huejutla de Reyes,Mexico,2,activo,25,113.75
+294,SHELLY WATTS,40000294,SHELLY.WATTS@sakilacustomer.org,Dayton,United States,2,activo,26,113.74
+486,GLEN TALBERT,40000486,GLEN.TALBERT@sakilacustomer.org,Acuña,Mexico,1,activo,26,113.74
+593,RENE MCALISTER,40000593,RENE.MCALISTER@sakilacustomer.org,Garden Grove,United States,2,activo,26,113.74
+139,AMBER DIXON,40000139,AMBER.DIXON@sakilacustomer.org,Touliu,Taiwan,1,activo,27,113.73
+113,CINDY FISHER,40000113,CINDY.FISHER@sakilacustomer.org,Cumaná,Venezuela,2,activo,29,113.71
+447,CLIFFORD BOWENS,40000447,CLIFFORD.BOWENS@sakilacustomer.org,Nabereznyje Tšelny,Russian Federation,1,activo,29,113.71
+157,DARLENE ROSE,40000157,DARLENE.ROSE@sakilacustomer.org,Pyongyang,North Korea,2,activo,31,113.69
+91,LOIS BUTLER,40000091,LOIS.BUTLER@sakilacustomer.org,Bandar Seri Begawan,Brunei,2,activo,35,113.65
+493,BRENT HARKINS,40000493,BRENT.HARKINS@sakilacustomer.org,Sultanbeyli,Turkey,1,activo,23,112.77
+540,TYRONE ASHER,40000540,TYRONE.ASHER@sakilacustomer.org,Ruse,Bulgaria,1,activo,24,112.76
+63,ASHLEY RICHARDSON,40000063,ASHLEY.RICHARDSON@sakilacustomer.org,Lincoln,United States,1,activo,25,112.75
+590,SETH HANNON,40000590,SETH.HANNON@sakilacustomer.org,al-Manama,Bahrain,2,activo,25,112.75
+327,LARRY THRASHER,40000327,LARRY.THRASHER@sakilacustomer.org,Adana,Turkey,2,activo,26,112.74
+407,DALE RATCLIFF,40000407,DALE.RATCLIFF@sakilacustomer.org,Rustenburg,South Africa,1,activo,27,112.73
+441,MARIO CHEATHAM,40000441,MARIO.CHEATHAM@sakilacustomer.org,Batna,Algeria,1,activo,28,112.72
+161,GERALDINE PERKINS,40000161,GERALDINE.PERKINS@sakilacustomer.org,Tel Aviv-Jaffa,Israel,1,activo,30,112.7
+256,MABEL HOLLAND,40000256,MABEL.HOLLAND@sakilacustomer.org,Monywa,Myanmar,2,activo,30,112.7
+453,CALVIN MARTEL,40000453,CALVIN.MARTEL@sakilacustomer.org,Maracaíbo,Venezuela,1,activo,23,111.77
+528,CLAUDE HERZOG,40000528,CLAUDE.HERZOG@sakilacustomer.org,Benguela,Angola,1,activo,25,111.75
+234,CLAUDIA FULLER,40000234,CLAUDIA.FULLER@sakilacustomer.org,Jalib al-Shuyukh,Kuwait,1,activo,26,111.74
+518,GABRIEL HARDER,40000518,GABRIEL.HARDER@sakilacustomer.org,Sivas,Turkey,1,activo,26,111.74
+116,VICTORIA GIBSON,40000116,VICTORIA.GIBSON@sakilacustomer.org,Pemalang,Indonesia,1,activo,27,111.73
+396,EARL SHANKS,40000396,EARL.SHANKS@sakilacustomer.org,Iwatsuki,Japan,1,activo,27,111.73
+579,DARYL LARUE,40000579,DARYL.LARUE@sakilacustomer.org,Mosul,Iraq,2,activo,27,111.73
+213,GINA WILLIAMSON,40000213,GINA.WILLIAMSON@sakilacustomer.org,Taizz,Yemen,1,activo,28,111.72
+592,TERRANCE ROUSH,40000592,TERRANCE.ROUSH@sakilacustomer.org,Székesfehérvár,Hungary,1,inactivo,29,111.71
+28,CYNTHIA YOUNG,40000028,CYNTHIA.YOUNG@sakilacustomer.org,Munger (Monghyr),India,1,activo,32,111.68
+258,MYRTLE FLEMING,40000258,MYRTLE.FLEMING@sakilacustomer.org,Santiago de los Caballeros,Dominican Republic,1,activo,24,110.76
+375,AARON SELBY,40000375,AARON.SELBY@sakilacustomer.org,Mwene-Ditu,"Congo, The Democratic Republic of the",2,activo,24,110.76
+417,TRAVIS ESTEP,40000417,TRAVIS.ESTEP@sakilacustomer.org,al-Qatif,Saudi Arabia,1,activo,25,110.75
+231,GEORGIA JACOBS,40000231,GEORGIA.JACOBS@sakilacustomer.org,Uttarpara-Kotrung,India,1,activo,26,110.74
+40,AMANDA CARTER,40000040,AMANDA.CARTER@sakilacustomer.org,Nador,Morocco,2,activo,27,110.73
+190,YOLANDA WEAVER,40000190,YOLANDA.WEAVER@sakilacustomer.org,Tabora,Tanzania,2,activo,27,110.73
+90,RUBY WASHINGTON,40000090,RUBY.WASHINGTON@sakilacustomer.org,Meixian,China,2,activo,28,110.72
+376,RANDY GAITHER,40000376,RANDY.GAITHER@sakilacustomer.org,Kurgan,Russian Federation,1,activo,28,110.72
+559,EVERETT BANDA,40000559,EVERETT.BANDA@sakilacustomer.org,Bilbays,Egypt,2,activo,28,110.72
+563,KEN PREWITT,40000563,KEN.PREWITT@sakilacustomer.org,Bucuresti,Romania,2,activo,29,110.71
+135,JUANITA MASON,40000135,JUANITA.MASON@sakilacustomer.org,Pune,India,2,activo,30,110.7
+424,KYLE SPURLOCK,40000424,KYLE.SPURLOCK@sakilacustomer.org,Shanwei,China,2,activo,30,110.7
+138,HAZEL WARREN,40000138,HAZEL.WARREN@sakilacustomer.org,Hohhot,China,1,activo,34,110.66
+477,DAN PAINE,40000477,DAN.PAINE@sakilacustomer.org,Stockport,United Kingdom,1,activo,22,109.78
+155,GAIL KNIGHT,40000155,GAIL.KNIGHT@sakilacustomer.org,Bern,Switzerland,1,activo,25,109.75
+193,KATIE ELLIOTT,40000193,KATIE.ELLIOTT@sakilacustomer.org,Kisumu,Kenya,2,activo,25,109.75
+305,RICHARD MCCRARY,40000305,RICHARD.MCCRARY@sakilacustomer.org,Arlington,United States,1,activo,25,109.75
+460,LEON BOSTIC,40000460,LEON.BOSTIC@sakilacustomer.org,Florencia,Colombia,1,activo,25,109.75
+562,WALLACE SLONE,40000562,WALLACE.SLONE@sakilacustomer.org,Sokoto,Nigeria,1,activo,25,109.75
+121,JOSEPHINE GOMEZ,40000121,JOSEPHINE.GOMEZ@sakilacustomer.org,Etawah,India,1,activo,26,109.74
+333,ANDREW PURDY,40000333,ANDREW.PURDY@sakilacustomer.org,Baku,Azerbaijan,2,activo,27,109.73
+471,DEAN SAUER,40000471,DEAN.SAUER@sakilacustomer.org,Johannesburg,South Africa,1,activo,27,109.73
+290,KRISTINA CHAMBERS,40000290,KRISTINA.CHAMBERS@sakilacustomer.org,Valle de la Pascua,Venezuela,1,activo,28,109.72
+574,JULIAN VEST,40000574,JULIAN.VEST@sakilacustomer.org,Akishima,Japan,2,activo,28,109.72
+405,LEONARD SCHOFIELD,40000405,LEONARD.SCHOFIELD@sakilacustomer.org,Tandil,Argentina,1,activo,32,109.68
+47,FRANCES PARKER,40000047,FRANCES.PARKER@sakilacustomer.org,Juazeiro do Norte,Brazil,1,activo,22,108.78
+541,DARREN WINDHAM,40000541,DARREN.WINDHAM@sakilacustomer.org,Livorno,Italy,2,activo,24,108.76
+201,VICKI FIELDS,40000201,VICKI.FIELDS@sakilacustomer.org,Witten,Germany,1,activo,25,108.75
+572,SIDNEY BURLESON,40000572,SIDNEY.BURLESON@sakilacustomer.org,Czestochowa,Poland,1,activo,25,108.75
+587,SERGIO STANFIELD,40000587,SERGIO.STANFIELD@sakilacustomer.org,Celaya,Mexico,1,activo,26,108.74
+145,LUCILLE HOLMES,40000145,LUCILLE.HOLMES@sakilacustomer.org,Soshanguve,South Africa,1,activo,28,108.72
+275,CAROLE BARNETT,40000275,CAROLE.BARNETT@sakilacustomer.org,Peoria,United States,2,activo,30,108.7
+246,MARIAN MENDOZA,40000246,MARIAN.MENDOZA@sakilacustomer.org,Maringá,Brazil,1,activo,23,107.77
+249,DORA MEDINA,40000249,DORA.MEDINA@sakilacustomer.org,Tianjin,China,2,activo,23,107.77
+127,ELAINE STEVENS,40000127,ELAINE.STEVENS@sakilacustomer.org,Smolensk,Russian Federation,2,activo,24,107.76
+553,MAX PITT,40000553,MAX.PITT@sakilacustomer.org,Novi Sad,Yugoslavia,1,activo,24,107.76
+109,EDNA WEST,40000109,EDNA.WEST@sakilacustomer.org,Klerksdorp,South Africa,2,activo,26,107.74
+261,DEANNA BYRD,40000261,DEANNA.BYRD@sakilacustomer.org,Tuguegarao,Philippines,1,activo,26,107.74
+581,VIRGIL WOFFORD,40000581,VIRGIL.WOFFORD@sakilacustomer.org,José Azueta,Mexico,1,activo,27,107.73
+24,KIMBERLY LEE,40000024,KIMBERLY.LEE@sakilacustomer.org,Córdoba,Argentina,2,activo,29,107.71
+52,JULIE SANCHEZ,40000052,JULIE.SANCHEZ@sakilacustomer.org,A Coruña (La Coruña),Spain,1,activo,29,107.71
+418,JEFF EAST,40000418,JEFF.EAST@sakilacustomer.org,San Felipe de Puerto Plata,Dominican Republic,2,activo,30,107.7
+452,TOM MILNER,40000452,TOM.MILNER@sakilacustomer.org,Abu Dhabi,United Arab Emirates,1,activo,32,107.68
+341,PETER MENARD,40000341,PETER.MENARD@sakilacustomer.org,Ede,Netherlands,1,activo,23,106.77
+345,CARL ARTIS,40000345,CARL.ARTIS@sakilacustomer.org,San Lorenzo,Paraguay,1,activo,23,106.77
+379,CARLOS COUGHLIN,40000379,CARLOS.COUGHLIN@sakilacustomer.org,Bhavnagar,India,1,activo,23,106.77
+11,LISA ANDERSON,40000011,LISA.ANDERSON@sakilacustomer.org,Sagamihara,Japan,2,activo,24,106.76
+98,LILLIAN GRIFFIN,40000098,LILLIAN.GRIFFIN@sakilacustomer.org,al-Ayn,United Arab Emirates,1,activo,25,106.75
+160,ERIN DUNN,40000160,ERIN.DUNN@sakilacustomer.org,Ljubertsy,Russian Federation,2,activo,27,106.73
+381,BOBBY BOUDREAU,40000381,BOBBY.BOUDREAU@sakilacustomer.org,South Hill,Anguilla,2,activo,35,106.65
+429,FREDERICK ISBELL,40000429,FREDERICK.ISBELL@sakilacustomer.org,Tsuyama,Japan,2,activo,21,105.79
+150,DANIELLE DANIELS,40000150,DANIELLE.DANIELS@sakilacustomer.org,Hidalgo,Mexico,2,activo,25,105.75
+308,THOMAS GRIGSBY,40000308,THOMAS.GRIGSBY@sakilacustomer.org,Kansas City,United States,1,activo,25,105.75
+414,VINCENT RALSTON,40000414,VINCENT.RALSTON@sakilacustomer.org,Allende,Mexico,1,activo,25,105.75
+517,BRAD MCCURDY,40000517,BRAD.MCCURDY@sakilacustomer.org,Chungho,Taiwan,2,activo,25,105.75
+96,DIANA ALEXANDER,40000096,DIANA.ALEXANDER@sakilacustomer.org,Augusta-Richmond County,United States,1,activo,27,105.73
+397,JIMMY SCHRADER,40000397,JIMMY.SCHRADER@sakilacustomer.org,Atšinsk,Russian Federation,1,activo,29,105.71
+247,STELLA MORENO,40000247,STELLA.MORENO@sakilacustomer.org,Coacalco de Berriozábal,Mexico,1,activo,22,104.78
+409,RODNEY MOELLER,40000409,RODNEY.MOELLER@sakilacustomer.org,Deba Habe,Nigeria,2,activo,23,104.77
+466,LEO EBERT,40000466,LEO.EBERT@sakilacustomer.org,Dongying,China,1,activo,23,104.77
+270,LEAH CURTIS,40000270,LEAH.CURTIS@sakilacustomer.org,Kalisz,Poland,1,activo,25,104.75
+31,BRENDA WRIGHT,40000031,BRENDA.WRIGHT@sakilacustomer.org,Kamarhati,India,2,activo,26,104.74
+312,MARK RINEHART,40000312,MARK.RINEHART@sakilacustomer.org,Tabuk,Saudi Arabia,2,activo,26,104.74
+425,FRANCIS SIKES,40000425,FRANCIS.SIKES@sakilacustomer.org,San Juan Bautista Tuxtepec,Mexico,2,activo,26,104.74
+391,CLARENCE GAMEZ,40000391,CLARENCE.GAMEZ@sakilacustomer.org,Izumisano,Japan,1,activo,30,104.7
+65,ROSE HOWARD,40000065,ROSE.HOWARD@sakilacustomer.org,Cayenne,French Guiana,2,activo,22,103.78
+365,BRUCE SCHWARZ,40000365,BRUCE.SCHWARZ@sakilacustomer.org,Okinawa,Japan,2,activo,23,103.77
+519,RON DELUCA,40000519,RON.DELUCA@sakilacustomer.org,Isesaki,Japan,2,activo,23,103.77
+475,PEDRO CHESTNUT,40000475,PEDRO.CHESTNUT@sakilacustomer.org,Šostka,Ukraine,2,activo,24,103.76
+199,BETH FRANKLIN,40000199,BETH.FRANKLIN@sakilacustomer.org,Haiphong,Vietnam,2,activo,25,103.75
+324,GARY COY,40000324,GARY.COY@sakilacustomer.org,Yuzhou,China,2,activo,25,103.75
+537,CLINTON BUFORD,40000537,CLINTON.BUFORD@sakilacustomer.org,Aurora,United States,2,activo,25,103.75
+546,KELLY KNOTT,40000546,KELLY.KNOTT@sakilacustomer.org,Sanya,China,1,activo,25,103.75
+202,CARLA GUTIERREZ,40000202,CARLA.GUTIERREZ@sakilacustomer.org,Bhusawal,India,2,activo,26,103.74
+74,DENISE KELLY,40000074,DENISE.KELLY@sakilacustomer.org,Rio Claro,Brazil,1,activo,27,103.73
+282,JENNY CASTRO,40000282,JENNY.CASTRO@sakilacustomer.org,Ponce,Puerto Rico,2,activo,27,103.73
+383,MARTIN BALES,40000383,MARTIN.BALES@sakilacustomer.org,Namibe,Angola,1,activo,27,103.73
+12,NANCY THOMAS,40000012,NANCY.THOMAS@sakilacustomer.org,Yamuna Nagar,India,1,activo,28,103.72
+374,JEREMY HURTADO,40000374,JEREMY.HURTADO@sakilacustomer.org,Vitória de Santo Antão,Brazil,2,activo,28,103.72
+100,ROBIN HAYES,40000100,ROBIN.HAYES@sakilacustomer.org,Jelets,Russian Federation,1,activo,24,102.76
+445,MICHEAL FORMAN,40000445,MICHEAL.FORMAN@sakilacustomer.org,Escobar,Argentina,1,activo,26,102.74
+367,ADAM GOOCH,40000367,ADAM.GOOCH@sakilacustomer.org,Adoni,India,1,activo,22,101.78
+480,COREY HAUSER,40000480,COREY.HAUSER@sakilacustomer.org,Gaziantep,Turkey,1,activo,22,101.78
+554,DWAYNE OLVERA,40000554,DWAYNE.OLVERA@sakilacustomer.org,Rajkot,India,1,activo,22,101.78
+83,LOUISE JENKINS,40000083,LOUISE.JENKINS@sakilacustomer.org,Springs,South Africa,1,activo,25,101.75
+156,BERTHA FERGUSON,40000156,BERTHA.FERGUSON@sakilacustomer.org,Ondo,Nigeria,1,activo,25,101.75
+359,WILLIE MARKHAM,40000359,WILLIE.MARKHAM@sakilacustomer.org,Almirante Brown,Argentina,2,activo,25,101.75
+219,WILLIE HOWELL,40000219,WILLIE.HOWELL@sakilacustomer.org,Vicente López,Argentina,2,activo,26,101.74
+298,ERIKA PENA,40000298,ERIKA.PENA@sakilacustomer.org,Oulu,Finland,1,activo,26,101.74
+385,PHILLIP HOLM,40000385,PHILLIP.HOLM@sakilacustomer.org,Tama,Japan,1,activo,26,101.74
+387,JESSE SCHILLING,40000387,JESSE.SCHILLING@sakilacustomer.org,Lubumbashi,"Congo, The Democratic Republic of the",2,activo,26,101.74
+509,RAUL FORTIER,40000509,RAUL.FORTIER@sakilacustomer.org,Chapra,India,1,activo,20,100.8
+55,DORIS REED,40000055,DORIS.REED@sakilacustomer.org,Balašiha,Russian Federation,2,activo,22,100.78
+106,CONNIE WALLACE,40000106,CONNIE.WALLACE@sakilacustomer.org,Ivanovo,Russian Federation,1,activo,23,100.77
+123,SHANNON FREEMAN,40000123,SHANNON.FREEMAN@sakilacustomer.org,Varanasi (Benares),India,2,activo,24,100.76
+456,RONNIE RICKETTS,40000456,RONNIE.RICKETTS@sakilacustomer.org,Ziguinchor,Senegal,2,activo,25,100.75
+303,WILLIAM SATTERFIELD,40000303,WILLIAM.SATTERFIELD@sakilacustomer.org,Sanaa,Yemen,2,activo,26,100.74
+474,DUSTIN GILLETTE,40000474,DUSTIN.GILLETTE@sakilacustomer.org,Emmen,Netherlands,2,activo,26,100.74
+77,JANE BENNETT,40000077,JANE.BENNETT@sakilacustomer.org,Araçatuba,Brazil,2,activo,28,100.72
+361,LAWRENCE LAWTON,40000361,LAWRENCE.LAWTON@sakilacustomer.org,Yaoundé,Cameroon,2,activo,31,100.69
+64,JUDITH COX,40000064,JUDITH.COX@sakilacustomer.org,Daxian,China,2,inactivo,33,100.67
+449,OSCAR AQUINO,40000449,OSCAR.AQUINO@sakilacustomer.org,Sirjan,Iran,2,activo,20,99.8
+489,RICARDO MEADOR,40000489,RICARDO.MEADOR@sakilacustomer.org,Okayama,Japan,1,activo,21,99.79
+67,KELLY TORRES,40000067,KELLY.TORRES@sakilacustomer.org,Xi´angtan,China,1,activo,22,99.78
+192,LAURIE LAWRENCE,40000192,LAURIE.LAWRENCE@sakilacustomer.org,Firozabad,India,1,activo,23,99.77
+352,ALBERT CROUSE,40000352,ALBERT.CROUSE@sakilacustomer.org,Bamenda,Cameroon,1,activo,23,99.77
+437,RANDALL NEUMANN,40000437,RANDALL.NEUMANN@sakilacustomer.org,La Romana,Dominican Republic,2,activo,23,99.77
+547,KURT EMMONS,40000547,KURT.EMMONS@sakilacustomer.org,Kanazawa,Japan,1,activo,23,99.77
+43,CHRISTINE ROBERTS,40000043,CHRISTINE.ROBERTS@sakilacustomer.org,Faaa,French Polynesia,2,activo,24,99.76
+511,CHESTER BENNER,40000511,CHESTER.BENNER@sakilacustomer.org,Suihua,China,1,activo,24,99.76
+10,DOROTHY TAYLOR,40000010,DOROTHY.TAYLOR@sakilacustomer.org,Esfahan,Iran,1,activo,25,99.75
+597,FREDDIE DUGGAN,40000597,FREDDIE.DUGGAN@sakilacustomer.org,Sullana,Peru,1,activo,25,99.75
+570,IVAN CROMWELL,40000570,IVAN.CROMWELL@sakilacustomer.org,Monclova,Mexico,2,activo,26,99.74
+580,ROSS GREY,40000580,ROSS.GREY@sakilacustomer.org,Iligan,Philippines,1,activo,27,99.73
+72,THERESA WATSON,40000072,THERESA.WATSON@sakilacustomer.org,Taguig,Philippines,2,activo,30,99.7
+272,KAY CALDWELL,40000272,KAY.CALDWELL@sakilacustomer.org,Yantai,China,1,activo,20,98.8
+17,DONNA THOMPSON,40000017,DONNA.THOMPSON@sakilacustomer.org,Elista,Russian Federation,1,activo,21,98.79
+443,FRANCISCO SKIDMORE,40000443,FRANCISCO.SKIDMORE@sakilacustomer.org,São Leopoldo,Brazil,2,activo,22,98.78
+544,CODY NOLEN,40000544,CODY.NOLEN@sakilacustomer.org,São Bernardo do Campo,Brazil,2,activo,22,98.78
+180,STACY CUNNINGHAM,40000180,STACY.CUNNINGHAM@sakilacustomer.org,Pereira,Colombia,2,activo,23,98.77
+217,AGNES BISHOP,40000217,AGNES.BISHOP@sakilacustomer.org,Sambhal,India,2,activo,23,98.77
+175,ANNETTE OLSON,40000175,ANNETTE.OLSON@sakilacustomer.org,Allappuzha (Alleppey),India,1,activo,24,98.76
+60,MILDRED BAILEY,40000060,MILDRED.BAILEY@sakilacustomer.org,Jaipur,India,1,activo,25,98.75
+264,GWENDOLYN MAY,40000264,GWENDOLYN.MAY@sakilacustomer.org,Higashiosaka,Japan,1,activo,25,98.75
+516,ELMER NOE,40000516,ELMER.NOE@sakilacustomer.org,Battambang,Cambodia,2,activo,26,98.74
+133,PAULINE HENRY,40000133,PAULINE.HENRY@sakilacustomer.org,Torreón,Mexico,1,activo,27,98.73
+310,DANIEL CABRAL,40000310,DANIEL.CABRAL@sakilacustomer.org,Ibirité,Brazil,2,activo,20,97.8
+505,RAFAEL ABNEY,40000505,RAFAEL.ABNEY@sakilacustomer.org,Talavera,Philippines,1,activo,21,97.79
+73,BEVERLY BROOKS,40000073,BEVERLY.BROOKS@sakilacustomer.org,Chiayi,Taiwan,2,activo,24,97.76
+111,CARMEN OWENS,40000111,CARMEN.OWENS@sakilacustomer.org,Caracas,Venezuela,1,activo,26,97.74
+182,RENEE LANE,40000182,RENEE.LANE@sakilacustomer.org,Compton,United States,1,activo,26,97.74
+422,MELVIN ELLINGTON,40000422,MELVIN.ELLINGTON@sakilacustomer.org,Laohekou,China,1,activo,26,97.74
+498,GENE SANBORN,40000498,GENE.SANBORN@sakilacustomer.org,Salala,Oman,1,activo,27,97.73
+461,DEREK BLAKELY,40000461,DEREK.BLAKELY@sakilacustomer.org,Gingoog,Philippines,1,activo,28,97.72
+578,WILLARD LUMPKIN,40000578,WILLARD.LUMPKIN@sakilacustomer.org,Carmen,Mexico,2,activo,22,96.78
+101,PEGGY MYERS,40000101,PEGGY.MYERS@sakilacustomer.org,Abha,Saudi Arabia,1,activo,24,96.76
+69,JUDY GRAY,40000069,JUDY.GRAY@sakilacustomer.org,Béchar,Algeria,2,activo,25,96.75
+326,JOSE ANDREW,40000326,JOSE.ANDREW@sakilacustomer.org,Kingstown,Saint Vincent and the Grenadines,1,activo,25,96.75
+551,CLAYTON BARBEE,40000551,CLAYTON.BARBEE@sakilacustomer.org,Alvorada,Brazil,2,activo,26,96.74
+561,IAN STILL,40000561,IAN.STILL@sakilacustomer.org,Garland,United States,2,activo,27,96.73
+596,ENRIQUE FORSYTHE,40000596,ENRIQUE.FORSYTHE@sakilacustomer.org,Patras,Greece,1,activo,28,96.72
+169,ERICA MATTHEWS,40000169,ERICA.MATTHEWS@sakilacustomer.org,Pingxiang,China,2,inactivo,22,95.78
+476,DERRICK BOURQUE,40000476,DERRICK.BOURQUE@sakilacustomer.org,Gatineau,Canada,1,activo,22,95.78
+488,SHANE MILLARD,40000488,SHANE.MILLARD@sakilacustomer.org,La Paz,Mexico,2,activo,22,95.78
+37,PAMELA BAKER,40000037,PAMELA.BAKER@sakilacustomer.org,Nanyang,China,1,activo,23,95.77
+216,NATALIE MEYER,40000216,NATALIE.MEYER@sakilacustomer.org,Aparecida de Goiânia,Brazil,1,activo,23,95.77
+291,TONI HOLT,40000291,TONI.HOLT@sakilacustomer.org,Roanoke,United States,1,activo,23,95.77
+364,BENJAMIN VARNEY,40000364,BENJAMIN.VARNEY@sakilacustomer.org,Guadalajara,Mexico,1,activo,23,95.77
+431,JOEL FRANCISCO,40000431,JOEL.FRANCISCO@sakilacustomer.org,Sucre,Bolivia,2,activo,23,95.77
+232,CONSTANCE REID,40000232,CONSTANCE.REID@sakilacustomer.org,Zaria,Nigeria,2,activo,25,95.75
+507,EDGAR RHOADS,40000507,EDGAR.RHOADS@sakilacustomer.org,Eskisehir,Turkey,2,activo,25,95.75
+132,ESTHER CRAWFORD,40000132,ESTHER.CRAWFORD@sakilacustomer.org,Botshabelo,South Africa,2,activo,28,95.72
+542,LONNIE TIRADO,40000542,LONNIE.TIRADO@sakilacustomer.org,Pangkal Pinang,Indonesia,2,activo,18,94.82
+238,NELLIE GARRETT,40000238,NELLIE.GARRETT@sakilacustomer.org,Shimoga,India,1,activo,21,94.79
+68,NICOLE PETERSON,40000068,NICOLE.PETERSON@sakilacustomer.org,Shivapuri,India,1,activo,22,94.78
+134,EMMA BOYD,40000134,EMMA.BOYD@sakilacustomer.org,Qalyub,Egypt,1,activo,23,94.77
+153,SUZANNE NICHOLS,40000153,SUZANNE.NICHOLS@sakilacustomer.org,Jakarta,Indonesia,2,activo,24,94.76
+330,SCOTT SHELLEY,40000330,SCOTT.SHELLEY@sakilacustomer.org,Aurora,United States,1,activo,25,94.75
+142,APRIL BURNS,40000142,APRIL.BURNS@sakilacustomer.org,Dundee,United Kingdom,1,activo,26,94.74
+81,ANDREA HENDERSON,40000081,ANDREA.HENDERSON@sakilacustomer.org,Mahajanga,Madagascar,1,activo,22,93.78
+189,LORETTA CARPENTER,40000189,LORETTA.CARPENTER@sakilacustomer.org,Oshawa,Canada,1,activo,22,93.78
+523,HARVEY GUAJARDO,40000523,HARVEY.GUAJARDO@sakilacustomer.org,Vinh,Vietnam,1,activo,22,93.78
+415,GLENN PULLEN,40000415,GLENN.PULLEN@sakilacustomer.org,Amersfoort,Netherlands,1,activo,23,93.77
+130,CHARLOTTE HUNTER,40000130,CHARLOTTE.HUNTER@sakilacustomer.org,Águas Lindas de Goiás,Brazil,1,activo,24,93.76
+229,TAMARA NGUYEN,40000229,TAMARA.NGUYEN@sakilacustomer.org,Anápolis,Brazil,1,activo,25,93.75
+235,JACKIE LYNCH,40000235,JACKIE.LYNCH@sakilacustomer.org,Buenaventura,Colombia,1,activo,25,93.75
+377,HOWARD FORTNER,40000377,HOWARD.FORTNER@sakilacustomer.org,Kermanshah,Iran,1,activo,26,93.74
+6,JENNIFER DAVIS,40000006,JENNIFER.DAVIS@sakilacustomer.org,Laredo,United States,2,activo,28,93.72
+174,YVONNE WATKINS,40000174,YVONNE.WATKINS@sakilacustomer.org,Ocumare del Tuy,Venezuela,2,activo,21,92.79
+301,ROBERT BAUGHMAN,40000301,ROBERT.BAUGHMAN@sakilacustomer.org,Kaliningrad,Russian Federation,2,activo,21,92.79
+8,SUSAN WILSON,40000008,SUSAN.WILSON@sakilacustomer.org,Hamilton,New Zealand,2,activo,24,92.76
+104,RITA GRAHAM,40000104,RITA.GRAHAM@sakilacustomer.org,Toulon,France,1,activo,24,92.76
+188,MELANIE ARMSTRONG,40000188,MELANIE.ARMSTRONG@sakilacustomer.org,Bayugan,Philippines,1,activo,25,92.75
+36,KATHLEEN ADAMS,40000036,KATHLEEN.ADAMS@sakilacustomer.org,Arak,Iran,2,activo,27,92.73
+151,MEGAN PALMER,40000151,MEGAN.PALMER@sakilacustomer.org,Laiwu,China,2,activo,27,92.73
+228,ALLISON STANLEY,40000228,ALLISON.STANLEY@sakilacustomer.org,Phnom Penh,Cambodia,2,activo,27,92.73
+212,WILMA RICHARDS,40000212,WILMA.RICHARDS@sakilacustomer.org,Bellevue,United States,2,activo,20,91.8
+33,ANNA HILL,40000033,ANNA.HILL@sakilacustomer.org,Alessandria,Italy,2,activo,21,91.79
+222,DELORES HANSEN,40000222,DELORES.HANSEN@sakilacustomer.org,Jaroslavl,Russian Federation,2,activo,21,91.79
+399,DANNY ISOM,40000399,DANNY.ISOM@sakilacustomer.org,Okara,Pakistan,1,activo,21,91.79
+18,CAROL GARCIA,40000018,CAROL.GARCIA@sakilacustomer.org,Kaduna,Nigeria,2,activo,22,91.78
+325,TIMOTHY BUNN,40000325,TIMOTHY.BUNN@sakilacustomer.org,Brasília,Brazil,1,activo,22,91.78
+93,PHYLLIS FOSTER,40000093,PHYLLIS.FOSTER@sakilacustomer.org,Zalantun,China,1,activo,23,91.77
+392,SEAN DOUGLASS,40000392,SEAN.DOUGLASS@sakilacustomer.org,Addis Abeba,Ethiopia,2,activo,23,91.77
+99,EMILY DIAZ,40000099,EMILY.DIAZ@sakilacustomer.org,Kimchon,South Korea,2,activo,24,91.76
+382,VICTOR BARKLEY,40000382,VICTOR.BARKLEY@sakilacustomer.org,Manchester,United States,2,activo,24,91.76
+564,BOB PFEIFFER,40000564,BOB.PFEIFFER@sakilacustomer.org,Xintai,China,2,activo,24,91.76
+435,RICKY SHELBY,40000435,RICKY.SHELBY@sakilacustomer.org,Junan,China,2,activo,25,91.75
+463,DARRELL POWER,40000463,DARRELL.POWER@sakilacustomer.org,Halifax,Canada,2,activo,25,91.75
+208,LUCY WHEELER,40000208,LUCY.WHEELER@sakilacustomer.org,Balurghat,India,1,activo,26,91.74
+215,JESSIE BANKS,40000215,JESSIE.BANKS@sakilacustomer.org,Stara Zagora,Bulgaria,2,activo,26,91.74
+115,WENDY HARRISON,40000115,WENDY.HARRISON@sakilacustomer.org,Nezahualcóyotl,Mexico,1,activo,30,91.7
+552,HUGH WALDROP,40000552,HUGH.WALDROP@sakilacustomer.org,Haining,China,2,activo,21,90.79
+539,MATHEW BOLIN,40000539,MATHEW.BOLIN@sakilacustomer.org,Valencia,Venezuela,1,activo,22,90.78
+184,VIVIAN RUIZ,40000184,VIVIAN.RUIZ@sakilacustomer.org,´s-Hertogenbosch,Netherlands,1,activo,23,90.77
+328,JEFFREY SPEAR,40000328,JEFFREY.SPEAR@sakilacustomer.org,Ciparay,Indonesia,2,activo,23,90.77
+501,RUBEN GEARY,40000501,RUBEN.GEARY@sakilacustomer.org,Lublin,Poland,1,activo,21,89.79
+545,JULIO NOLAND,40000545,JULIO.NOLAND@sakilacustomer.org,Konotop,Ukraine,2,activo,21,89.79
+143,LESLIE GORDON,40000143,LESLIE.GORDON@sakilacustomer.org,Kilis,Turkey,1,activo,22,89.78
+9,MARGARET MOORE,40000009,MARGARET.MOORE@sakilacustomer.org,Masqat,Oman,2,activo,23,89.77
+233,LILLIE KIM,40000233,LILLIE.KIM@sakilacustomer.org,Idfu,Egypt,2,activo,23,89.77
+313,DONALD MAHON,40000313,DONALD.MAHON@sakilacustomer.org,Ezhou,China,2,activo,23,89.77
+34,REBECCA SCOTT,40000034,REBECCA.SCOTT@sakilacustomer.org,Kurashiki,Japan,2,activo,24,89.76
+351,JACK FOUST,40000351,JACK.FOUST@sakilacustomer.org,Zeleznogorsk,Russian Federation,1,activo,24,89.76
+384,ERNEST STEPP,40000384,ERNEST.STEPP@sakilacustomer.org,Huai´an,China,2,activo,25,89.75
+419,CHAD CARBONE,40000419,CHAD.CARBONE@sakilacustomer.org,Katihar,India,1,activo,25,89.75
+357,KEITH RICO,40000357,KEITH.RICO@sakilacustomer.org,Bratislava,Slovakia,1,activo,26,89.74
+450,JAY ROBB,40000450,JAY.ROBB@sakilacustomer.org,Surakarta,Indonesia,1,activo,26,89.74
+483,VERNON CHAPA,40000483,VERNON.CHAPA@sakilacustomer.org,Denizli,Turkey,2,activo,18,88.82
+203,TARA RYAN,40000203,TARA.RYAN@sakilacustomer.org,Gorontalo,Indonesia,1,activo,20,88.8
+496,TYLER WREN,40000496,TYLER.WREN@sakilacustomer.org,Rizhao,China,2,activo,21,88.79
+440,BERNARD COLBY,40000440,BERNARD.COLBY@sakilacustomer.org,Dhule (Dhulia),India,1,activo,22,88.78
+534,CHRISTIAN JUNG,40000534,CHRISTIAN.JUNG@sakilacustomer.org,Amroha,India,1,inactivo,24,88.76
+369,FRED WHEAT,40000369,FRED.WHEAT@sakilacustomer.org,Juárez,Mexico,2,activo,25,88.75
+278,BILLIE HORTON,40000278,BILLIE.HORTON@sakilacustomer.org,Inegöl,Turkey,2,activo,26,88.74
+194,KRISTEN CHAVEZ,40000194,KRISTEN.CHAVEZ@sakilacustomer.org,Hino,Japan,2,activo,18,87.82
+524,JARED ELY,40000524,JARED.ELY@sakilacustomer.org,Purwakarta,Indonesia,1,activo,19,87.81
+88,BONNIE HUGHES,40000088,BONNIE.HUGHES@sakilacustomer.org,Cheju,South Korea,2,activo,21,87.79
+226,MAUREEN LITTLE,40000226,MAUREEN.LITTLE@sakilacustomer.org,Asunción,Paraguay,2,activo,21,87.79
+85,ANNE POWELL,40000085,ANNE.POWELL@sakilacustomer.org,Bradford,United Kingdom,2,activo,23,87.77
+227,COLLEEN BURTON,40000227,COLLEEN.BURTON@sakilacustomer.org,Saarbrücken,Germany,1,activo,24,87.76
+455,JON WILES,40000455,JON.WILES@sakilacustomer.org,El Alto,Bolivia,2,activo,24,87.76
+195,VANESSA SIMS,40000195,VANESSA.SIMS@sakilacustomer.org,Siegen,Germany,1,activo,19,86.81
+478,LEWIS LYMAN,40000478,LEWIS.LYMAN@sakilacustomer.org,Ashqelon,Israel,1,activo,19,86.81
+165,LORRAINE STEPHENS,40000165,LORRAINE.STEPHENS@sakilacustomer.org,Hami,China,2,activo,21,86.79
+283,FELICIA SUTTON,40000283,FELICIA.SUTTON@sakilacustomer.org,Korla,China,1,activo,28,86.72
+567,ALFREDO MCADAMS,40000567,ALFREDO.MCADAMS@sakilacustomer.org,Serpuhov,Russian Federation,2,activo,20,85.8
+412,ALLEN BUTTERFIELD,40000412,ALLEN.BUTTERFIELD@sakilacustomer.org,Hoshiarpur,India,2,activo,21,85.79
+315,KENNETH GOODEN,40000315,KENNETH.GOODEN@sakilacustomer.org,Bat Yam,Israel,2,inactivo,17,84.83
+79,RACHEL BARNES,40000079,RACHEL.BARNES@sakilacustomer.org,Kamakura,Japan,1,activo,22,84.78
+394,CHRIS BROTHERS,40000394,CHRIS.BROTHERS@sakilacustomer.org,Gijón,Spain,2,activo,22,84.78
+62,JOAN COOPER,40000062,JOAN.COOPER@sakilacustomer.org,Saint Louis,United States,1,activo,23,84.77
+185,ROBERTA HARPER,40000185,ROBERTA.HARPER@sakilacustomer.org,Shahr-e Kord,Iran,1,activo,23,84.77
+140,EVA RAMOS,40000140,EVA.RAMOS@sakilacustomer.org,Clarksville,United States,1,activo,18,83.82
+599,AUSTIN CINTRON,40000599,AUSTIN.CINTRON@sakilacustomer.org,Tieli,China,2,activo,19,83.81
+152,ALICIA MILLS,40000152,ALICIA.MILLS@sakilacustomer.org,Nagaon,India,1,activo,21,83.79
+556,ARMANDO GRUBER,40000556,ARMANDO.GRUBER@sakilacustomer.org,Southport,United Kingdom,2,activo,21,83.79
+598,WADE DELVALLE,40000598,WADE.DELVALLE@sakilacustomer.org,Lausanne,Switzerland,1,activo,22,83.78
+118,KIM CRUZ,40000118,KIM.CRUZ@sakilacustomer.org,Grand Prairie,United States,1,activo,21,82.79
+543,LANCE PEMBERTON,40000543,LANCE.PEMBERTON@sakilacustomer.org,Beni-Mellal,Morocco,1,activo,22,82.78
+243,LYDIA BURKE,40000243,LYDIA.BURKE@sakilacustomer.org,San Miguel de Tucumán,Argentina,1,activo,24,82.76
+4,BARBARA JONES,40000004,BARBARA.JONES@sakilacustomer.org,Myingyan,Myanmar,2,activo,22,81.78
+527,CORY MEEHAN,40000527,CORY.MEEHAN@sakilacustomer.org,Mogiljov,Belarus,1,activo,24,81.76
+223,MELINDA FERNANDEZ,40000223,MELINDA.FERNANDEZ@sakilacustomer.org,Mandi Bahauddin,Pakistan,1,activo,17,80.83
+70,CHRISTINA RAMIREZ,40000070,CHRISTINA.RAMIREZ@sakilacustomer.org,al-Hawiya,Saudi Arabia,2,activo,18,80.82
+205,EILEEN CARR,40000205,EILEEN.CARR@sakilacustomer.org,Ciudad del Este,Paraguay,2,activo,18,80.82
+358,SAMUEL MARLOW,40000358,SAMUEL.MARLOW@sakilacustomer.org,Ranchi,India,2,activo,21,80.79
+521,ROLAND SOUTH,40000521,ROLAND.SOUTH@sakilacustomer.org,Yingkou,China,2,activo,23,80.77
+288,BOBBIE CRAIG,40000288,BOBBIE.CRAIG@sakilacustomer.org,Valle de Santiago,Mexico,1,activo,24,80.76
+411,NORMAN CURRIER,40000411,NORMAN.CURRIER@sakilacustomer.org,Cianjur,Indonesia,1,activo,26,80.74
+548,ALLAN CORNISH,40000548,ALLAN.CORNISH@sakilacustomer.org,Tarlac,Philippines,1,activo,19,79.81
+402,LUIS YANEZ,40000402,LUIS.YANEZ@sakilacustomer.org,Brest,France,1,activo,20,79.8
+94,NORMA GONZALES,40000094,NORMA.GONZALES@sakilacustomer.org,Bislig,Philippines,1,activo,21,79.79
+420,JACOB LANCE,40000420,JACOB.LANCE@sakilacustomer.org,El Monte,United States,1,activo,21,79.79
+430,RAY HOULE,40000430,RAY.HOULE@sakilacustomer.org,Dzerzinsk,Russian Federation,1,activo,22,79.78
+398,ANTONIO MEEK,40000398,ANTONIO.MEEK@sakilacustomer.org,Bagé,Brazil,1,activo,16,78.84
+428,HERBERT KRUGER,40000428,HERBERT.KRUGER@sakilacustomer.org,Syktyvkar,Russian Federation,2,activo,20,78.8
+335,GREGORY MAULDIN,40000335,GREGORY.MAULDIN@sakilacustomer.org,Sousse,Tunisia,1,activo,23,78.77
+95,PAULA BRYANT,40000095,PAULA.BRYANT@sakilacustomer.org,Pathankot,India,2,activo,18,77.82
+549,NELSON CHRISTENSON,40000549,NELSON.CHRISTENSON@sakilacustomer.org,Santiago de Compostela,Spain,1,activo,20,77.8
+76,IRENE PRICE,40000076,IRENE.PRICE@sakilacustomer.org,Pavlodar,Kazakstan,2,activo,23,77.77
+48,ANN EVANS,40000048,ANN.EVANS@sakilacustomer.org,Niznekamsk,Russian Federation,1,activo,17,76.83
+224,PEARL GARZA,40000224,PEARL.GARZA@sakilacustomer.org,Jodhpur,India,2,activo,22,76.78
+183,IDA ANDREWS,40000183,IDA.ANDREWS@sakilacustomer.org,Luziânia,Brazil,2,activo,23,76.77
+530,DARRYL ASHCRAFT,40000530,DARRYL.ASHCRAFT@sakilacustomer.org,Ezeiza,Argentina,2,activo,23,76.77
+413,MARVIN YEE,40000413,MARVIN.YEE@sakilacustomer.org,Berhampore (Baharampur),India,2,activo,21,75.79
+555,DWIGHT LOMBARDI,40000555,DWIGHT.LOMBARDI@sakilacustomer.org,Chatsworth,South Africa,1,activo,17,74.83
+525,ADRIAN CLARY,40000525,ADRIAN.CLARY@sakilacustomer.org,Udine,Italy,2,activo,19,74.81
+191,JEANETTE GREENE,40000191,JEANETTE.GREENE@sakilacustomer.org,Novotšerkassk,Russian Federation,1,activo,20,74.8
+514,FRANKLIN TROUTMAN,40000514,FRANKLIN.TROUTMAN@sakilacustomer.org,Zaoyang,China,2,activo,22,74.78
+464,JEROME KENYON,40000464,JEROME.KENYON@sakilacustomer.org,Rancagua,Chile,1,activo,16,73.84
+124,SHEILA WELLS,40000124,SHEILA.WELLS@sakilacustomer.org,Kütahya,Turkey,1,inactivo,18,73.82
+344,HENRY BILLINGSLEY,40000344,HENRY.BILLINGSLEY@sakilacustomer.org,Nuku´alofa,Tonga,1,activo,18,73.82
+250,JO FOWLER,40000250,JO.FOWLER@sakilacustomer.org,Oyo,Nigeria,2,activo,20,73.8
+401,TONY CARRANZA,40000401,TONY.CARRANZA@sakilacustomer.org,Koriyama,Japan,2,activo,21,73.79
+350,JUAN FRALEY,40000350,JUAN.FRALEY@sakilacustomer.org,Tšeboksary,Russian Federation,1,activo,23,73.77
+557,FELIX GAFFNEY,40000557,FELIX.GAFFNEY@sakilacustomer.org,Vilnius,Lithuania,1,activo,24,73.76
+353,JONATHAN SCARBOROUGH,40000353,JONATHAN.SCARBOROUGH@sakilacustomer.org,Pachuca de Soto,Mexico,1,activo,18,72.82
+355,TERRY GRISSOM,40000355,TERRY.GRISSOM@sakilacustomer.org,Matsue,Japan,2,activo,20,72.8
+117,EDITH MCDONALD,40000117,EDITH.MCDONALD@sakilacustomer.org,Gandhinagar,India,1,activo,19,71.81
+378,EUGENE CULPEPPER,40000378,EUGENE.CULPEPPER@sakilacustomer.org,Shenzhen,China,1,activo,19,71.81
+162,LAUREN HUDSON,40000162,LAUREN.HUDSON@sakilacustomer.org,Le Mans,France,2,activo,20,71.8
+320,ANTHONY SCHWAB,40000320,ANTHONY.SCHWAB@sakilacustomer.org,Tafuna,American Samoa,2,activo,20,71.8
+177,SAMANTHA DUNCAN,40000177,SAMANTHA.DUNCAN@sakilacustomer.org,Matamoros,Mexico,2,activo,23,71.77
+255,IRMA PEARSON,40000255,IRMA.PEARSON@sakilacustomer.org,Hagonoy,Philippines,2,activo,18,70.82
+370,WAYNE TRUONG,40000370,WAYNE.TRUONG@sakilacustomer.org,Gulbarga,India,2,activo,19,70.81
+465,FLOYD GANDY,40000465,FLOYD.GANDY@sakilacustomer.org,Zapopan,Mexico,1,activo,17,69.83
+271,PENNY NEAL,40000271,PENNY.NEAL@sakilacustomer.org,Kumbakonam,India,1,inactivo,18,68.82
+159,JILL HAWKINS,40000159,JILL.HAWKINS@sakilacustomer.org,Linz,Austria,1,activo,21,68.79
+218,VERA MCCOY,40000218,VERA.MCCOY@sakilacustomer.org,Kabul,Afghanistan,1,activo,18,67.82
+164,JOANN GARDNER,40000164,JOANN.GARDNER@sakilacustomer.org,Tarsus,Turkey,2,activo,16,66.84
+458,LLOYD DOWD,40000458,LLOYD.DOWD@sakilacustomer.org,Tegal,Indonesia,1,activo,19,66.81
+568,ALBERTO HENNING,40000568,ALBERTO.HENNING@sakilacustomer.org,Barcelona,Venezuela,2,activo,21,66.79
+492,LESTER KRAUS,40000492,LESTER.KRAUS@sakilacustomer.org,Kanchrapara,India,2,activo,16,65.84
+586,KIRK STCLAIR,40000586,KIRK.STCLAIR@sakilacustomer.org,Tsaotun,Taiwan,1,activo,19,64.81
+252,MATTIE HOFFMAN,40000252,MATTIE.HOFFMAN@sakilacustomer.org,London,United Kingdom,2,activo,22,64.78
+136,ANITA MORALES,40000136,ANITA.MORALES@sakilacustomer.org,Hubli-Dharwad,India,2,activo,15,62.85
+110,TIFFANY JORDAN,40000110,TIFFANY.JORDAN@sakilacustomer.org,Enshi,China,2,activo,14,59.86
+61,KATHERINE RIVERA,40000061,KATHERINE.RIVERA@sakilacustomer.org,Basel,Switzerland,2,activo,14,58.86
+97,ANNIE RUSSELL,40000097,ANNIE.RUSSELL@sakilacustomer.org,Tete,Mozambique,2,activo,18,58.82
+395,JOHNNY TURPIN,40000395,JOHNNY.TURPIN@sakilacustomer.org,al-Qadarif,Sudan,2,activo,19,57.81
+318,BRIAN WYMAN,40000318,BRIAN.WYMAN@sakilacustomer.org,Bydgoszcz,Poland,1,activo,12,52.88
+281,LEONA OBRIEN,40000281,LEONA.OBRIEN@sakilacustomer.org,Fuzhou,China,2,activo,14,50.86
+248,CAROLINE BOWMAN,40000248,CAROLINE.BOWMAN@sakilacustomer.org,Tallahassee,United States,1,activo,15,50.85
