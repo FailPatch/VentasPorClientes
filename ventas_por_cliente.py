@@ -12,122 +12,156 @@ from datetime import date
 from pathlib import Path
 
 from dotenv import load_dotenv
-from supabase import create_client
 
 
 load_dotenv()
 
-# Tablas y columnas reales segun sakila-supabase-full.sql.
-VENTAS_TABLE = os.getenv("VENTAS_TABLE", "payment")
-VENTA_FECHA_COL = os.getenv("VENTA_FECHA_COL", "payment_date")
-VENTA_TOTAL_COL = os.getenv("VENTA_TOTAL_COL", "amount")
-VENTA_CLIENTE_ID_COL = os.getenv("VENTA_CLIENTE_ID_COL", "customer_id")
-PAGE_SIZE = int(os.getenv("SUPABASE_PAGE_SIZE", "1000"))
-
-# API fija del responsable del modulo de Clientes.
+# Este modulo trabaja solo con APIs. No se conecta directo a Supabase ni a otra BD.
 CLIENTES_API_URL = os.getenv("CLIENTES_API_URL", "http://35.239.247.220:8001").rstrip("/")
-CLIENTES_API_PAGE_SIZE = int(os.getenv("CLIENTES_API_PAGE_SIZE", "100"))
-CLIENTES_API_TIMEOUT = int(os.getenv("CLIENTES_API_TIMEOUT", "15"))
+CLIENTES_API_ENDPOINT = os.getenv("CLIENTES_API_ENDPOINT", "/clientes")
+
+# Coloca aqui la API de ventas/pagos cuando el responsable del modulo la comparta.
+VENTAS_API_URL = os.getenv("VENTAS_API_URL", "").rstrip("/")
+VENTAS_API_ENDPOINT = os.getenv("VENTAS_API_ENDPOINT", "/pagos")
+
+API_PAGE_SIZE = int(os.getenv("API_PAGE_SIZE", "100"))
+API_TIMEOUT = int(os.getenv("API_TIMEOUT", "15"))
+
+# Nombres esperados de campos en la API de ventas/pagos.
+VENTA_CLIENTE_ID_FIELD = os.getenv("VENTA_CLIENTE_ID_FIELD", "customer_id")
+VENTA_TOTAL_FIELD = os.getenv("VENTA_TOTAL_FIELD", "amount")
+VENTA_FECHA_FIELD = os.getenv("VENTA_FECHA_FIELD", "payment_date")
 
 
-def get_supabase_client():
-    url = os.getenv("SUPABASE_URL")
-    key = os.getenv("SUPABASE_KEY")
-
-    if not url or not key:
+def api_get_json(base_url, path, params=None):
+    if not base_url:
         raise RuntimeError(
-            "Faltan SUPABASE_URL o SUPABASE_KEY. Configuralos en un archivo .env."
+            "Falta configurar una URL de API. Revisa el archivo .env."
         )
 
-    return create_client(url, key)
-
-
-def fetch_clientes_api():
-    clientes = {}
-    pagina = 1
-
-    while True:
-        data = api_get_json(
-            "/clientes",
-            {"pagina": pagina, "por_pagina": CLIENTES_API_PAGE_SIZE},
-        )
-
-        for item in data.get("items", []):
-            cliente_id = item.get("customer_id")
-            if cliente_id is not None:
-                clientes[cliente_id] = build_cliente_info(item)
-
-        if pagina >= int(data.get("total_paginas", pagina)):
-            return clientes
-
-        pagina += 1
-
-
-def api_get_json(path, params=None):
     query = ""
     if params:
         query = "?" + urllib.parse.urlencode(params)
 
-    url = f"{CLIENTES_API_URL}{path}{query}"
+    url = f"{base_url}{path}{query}"
     request = urllib.request.Request(url, headers={"Accept": "application/json"})
 
     try:
-        with urllib.request.urlopen(request, timeout=CLIENTES_API_TIMEOUT) as response:
+        with urllib.request.urlopen(request, timeout=API_TIMEOUT) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.URLError as exc:
-        raise RuntimeError(
-            f"No se pudo conectar con la API de Clientes: {CLIENTES_API_URL}"
-        ) from exc
+        raise RuntimeError(f"No se pudo conectar con la API: {url}") from exc
+
+
+def extract_items(data):
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        if isinstance(data.get("items"), list):
+            return data["items"]
+        if isinstance(data.get("data"), list):
+            return data["data"]
+        if isinstance(data.get("results"), list):
+            return data["results"]
+    return []
+
+
+def get_total_paginas(data, pagina_actual):
+    if not isinstance(data, dict):
+        return pagina_actual
+
+    total_paginas = data.get("total_paginas") or data.get("pages")
+    if total_paginas:
+        return int(total_paginas)
+
+    total = data.get("total")
+    por_pagina = data.get("por_pagina") or data.get("per_page") or API_PAGE_SIZE
+    if total:
+        return max(1, (int(total) + int(por_pagina) - 1) // int(por_pagina))
+
+    return pagina_actual
+
+
+def fetch_paginated_api(base_url, endpoint):
+    rows = []
+    pagina = 1
+
+    while True:
+        data = api_get_json(
+            base_url,
+            endpoint,
+            {"pagina": pagina, "por_pagina": API_PAGE_SIZE},
+        )
+        rows.extend(extract_items(data))
+
+        if pagina >= get_total_paginas(data, pagina):
+            return rows
+
+        pagina += 1
+
+
+def fetch_clientes_api():
+    clientes = {}
+    for item in fetch_paginated_api(CLIENTES_API_URL, CLIENTES_API_ENDPOINT):
+        cliente_id = item.get("customer_id") or item.get("id")
+        if cliente_id is not None:
+            clientes[int(cliente_id)] = build_cliente_info(item)
+    return clientes
 
 
 def build_cliente_info(row):
     nombre = f"{row.get('nombre', '')} {row.get('apellido', '')}".strip()
+    if not nombre:
+        nombre = row.get("name") or row.get("cliente") or "Sin nombre"
+
     return {
-        "cliente": nombre or "Sin nombre",
+        "cliente": nombre,
         "dni": row.get("dni", ""),
         "email": row.get("email", ""),
-        "ciudad": row.get("city", ""),
-        "pais": row.get("country", ""),
-        "tienda": row.get("store_id", ""),
+        "ciudad": row.get("city") or row.get("ciudad", ""),
+        "pais": row.get("country") or row.get("pais", ""),
+        "tienda": row.get("store_id") or row.get("tienda", ""),
         "estado": row.get("estado", ""),
     }
 
 
-def fetch_ventas(supabase, fecha_inicio=None, fecha_fin=None):
-    query = supabase.table(VENTAS_TABLE).select(
-        f"{VENTA_CLIENTE_ID_COL},{VENTA_TOTAL_COL},{VENTA_FECHA_COL}"
-    )
+def fetch_ventas_api(fecha_inicio=None, fecha_fin=None):
+    if not VENTAS_API_URL:
+        raise RuntimeError(
+            "Falta VENTAS_API_URL en el .env. Para trabajar solo con APIs, "
+            "necesitas que el modulo de ventas/pagos exponga una API."
+        )
 
+    params = {"pagina": 1, "por_pagina": API_PAGE_SIZE}
     if fecha_inicio:
-        query = query.gte(VENTA_FECHA_COL, fecha_inicio)
+        params["desde"] = fecha_inicio
     if fecha_fin:
-        query = query.lte(VENTA_FECHA_COL, fecha_fin)
+        params["hasta"] = fecha_fin
 
-    return fetch_all(query)
-
-
-def fetch_all(query):
-    rows = []
-    start = 0
+    ventas = []
+    pagina = 1
 
     while True:
-        end = start + PAGE_SIZE - 1
-        response = query.range(start, end).execute()
-        batch = response.data or []
-        rows.extend(batch)
+        params["pagina"] = pagina
+        data = api_get_json(VENTAS_API_URL, VENTAS_API_ENDPOINT, params)
+        ventas.extend(extract_items(data))
 
-        if len(batch) < PAGE_SIZE:
-            return rows
+        if pagina >= get_total_paginas(data, pagina):
+            return ventas
 
-        start += PAGE_SIZE
+        pagina += 1
 
 
 def build_reporte(ventas, clientes):
     resumen = defaultdict(lambda: {"cantidad_ventas": 0, "total_vendido": 0.0})
 
     for venta in ventas:
-        cliente_id = venta.get(VENTA_CLIENTE_ID_COL)
-        total = float(venta.get(VENTA_TOTAL_COL) or 0)
+        cliente_id = venta.get(VENTA_CLIENTE_ID_FIELD)
+        if cliente_id is None:
+            continue
+
+        total = float(venta.get(VENTA_TOTAL_FIELD) or 0)
+        cliente_id = int(cliente_id)
 
         resumen[cliente_id]["cantidad_ventas"] += 1
         resumen[cliente_id]["total_vendido"] += total
@@ -174,7 +208,7 @@ def export_csv(reporte, output_path):
         writer.writerows(reporte)
 
 
-def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
+def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
     total_clientes = len(reporte)
     total_ventas = sum(row["cantidad_ventas"] for row in reporte)
     total_vendido = sum(row["total_vendido"] for row in reporte)
@@ -290,13 +324,6 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
             font-size: 24px;
         }}
 
-        .tabla-wrap {{
-            background: #ffffff;
-            border: 1px solid #d9e2ec;
-            border-radius: 8px;
-            overflow: auto;
-        }}
-
         .panel {{
             background: #ffffff;
             border: 1px solid #d9e2ec;
@@ -375,6 +402,13 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
             margin: 14px 0 0;
         }}
 
+        .tabla-wrap {{
+            background: #ffffff;
+            border: 1px solid #d9e2ec;
+            border-radius: 8px;
+            overflow: auto;
+        }}
+
         table {{
             width: 100%;
             border-collapse: collapse;
@@ -428,11 +462,6 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
             padding: 5px 12px;
             font-size: 12px;
             font-weight: 700;
-        }}
-
-        .muted {{
-            color: #627d98;
-            font-size: 13px;
         }}
 
         .total {{
@@ -516,9 +545,9 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
             <header>
                 <div>
                     <h1>Ventas por Cliente</h1>
-                    <p class="subtitulo">Supabase payment + API Clientes - {html.escape(rango)}</p>
+                    <p class="subtitulo">Reporte integrado con APIs - {html.escape(rango)}</p>
                 </div>
-                <span class="badge">API Clientes conectada</span>
+                <span class="badge">API Clientes + API Ventas</span>
             </header>
 
             <section class="resumen">
@@ -591,8 +620,7 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
                             <th>Total vendido</th>
                         </tr>
                     </thead>
-                    <tbody id="tabla-body">
-                    </tbody>
+                    <tbody id="tabla-body"></tbody>
                 </table>
             </section>
 
@@ -706,6 +734,12 @@ def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
 </html>
 """
 
+    return contenido
+
+
+def export_html(reporte, output_path, fecha_inicio=None, fecha_fin=None):
+    contenido = build_html_content(reporte, fecha_inicio, fecha_fin)
+
     with open(output_path, "w", encoding="utf-8") as file:
         file.write(contenido)
 
@@ -741,7 +775,7 @@ def print_reporte(reporte, limite=10):
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Reporte local: ventas por cliente integrado con API de Clientes"
+        description="Reporte de ventas por cliente integrado solo con APIs"
     )
     parser.add_argument("--desde", help="Fecha inicial en formato YYYY-MM-DD")
     parser.add_argument("--hasta", help="Fecha final en formato YYYY-MM-DD")
@@ -765,10 +799,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-    supabase = get_supabase_client()
 
     clientes = fetch_clientes_api()
-    ventas = fetch_ventas(supabase, args.desde, args.hasta)
+    ventas = fetch_ventas_api(args.desde, args.hasta)
     reporte = build_reporte(ventas, clientes)
 
     export_csv(reporte, args.output)
