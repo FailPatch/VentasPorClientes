@@ -115,9 +115,12 @@ def listar_ventas_por_cliente(
     tienda: int | None = Query(default=None, description="Filtrar por tienda"),
     estado: str | None = Query(default=None, description="Filtrar por estado"),
     pagina: int = Query(default=1, ge=1),
-    por_pagina: int = Query(default=10, ge=1, le=100),
+    por_pagina: int = Query(default=10, ge=1, le=1000),
 ):
-    reporte = obtener_reporte(desde, hasta)
+    try:
+        reporte = obtener_reporte(desde, hasta)
+    except HTTPException:
+        reporte = obtener_reporte_solo_clientes()
     filtrado = filtrar_reporte(reporte, cliente_id, nombre, tienda, estado)
 
     total = len(filtrado)
@@ -140,7 +143,10 @@ def obtener_ventas_de_cliente(
     desde: str | None = Query(default=None, description="Fecha inicial YYYY-MM-DD"),
     hasta: str | None = Query(default=None, description="Fecha final YYYY-MM-DD"),
 ):
-    reporte = obtener_reporte(desde, hasta)
+    try:
+        reporte = obtener_reporte(desde, hasta)
+    except HTTPException:
+        reporte = obtener_reporte_solo_clientes()
 
     for row in reporte:
         if int(row["cliente_id"]) == customer_id:
