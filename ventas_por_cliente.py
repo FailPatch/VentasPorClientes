@@ -384,6 +384,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             font-weight: 800;
             height: 42px;
             padding: 0 18px;
+            transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
         }}
 
         .btn-primary {{
@@ -392,14 +393,45 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             color: #ffffff;
         }}
 
+        .btn-primary:hover {{
+            background: #3151ad;
+            border-color: #3151ad;
+            box-shadow: 0 8px 18px rgba(36, 63, 143, 0.22);
+            transform: translateY(-1px);
+        }}
+
         .btn-light {{
             background: #ffffff;
             color: #2f6fed;
         }}
 
+        .btn-light:hover {{
+            background: #f3f7ff;
+            border-color: #7aa2ff;
+            box-shadow: 0 8px 18px rgba(47, 111, 237, 0.14);
+            transform: translateY(-1px);
+        }}
+
+        button:active {{
+            transform: translateY(0) scale(0.98);
+        }}
+
+        button:disabled {{
+            cursor: not-allowed;
+            opacity: 0.55;
+            transform: none;
+            box-shadow: none;
+        }}
+
         .resultado-info {{
             color: #52606d;
             margin: 14px 0 0;
+        }}
+
+        .live-status {{
+            color: #627d98;
+            font-size: 13px;
+            margin-left: auto;
         }}
 
         .tabla-wrap {{
@@ -457,11 +489,19 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         .estado {{
             display: inline-block;
             border-radius: 999px;
-            background: #c6f6d5;
-            color: #047857;
             padding: 5px 12px;
             font-size: 12px;
             font-weight: 700;
+        }}
+
+        .estado-activo {{
+            background: #c6f6d5;
+            color: #047857;
+        }}
+
+        .estado-inactivo {{
+            background: #fee2e2;
+            color: #b91c1c;
         }}
 
         .total {{
@@ -553,15 +593,15 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             <section class="resumen">
                 <div class="card">
                     <span>Clientes con ventas</span>
-                    <strong>{total_clientes}</strong>
+                    <strong id="resumen-clientes">{total_clientes}</strong>
                 </div>
                 <div class="card">
                     <span>Cantidad de ventas</span>
-                    <strong>{total_ventas}</strong>
+                    <strong id="resumen-ventas">{total_ventas}</strong>
                 </div>
                 <div class="card">
                     <span>Total vendido</span>
-                    <strong>S/ {total_vendido:.2f}</strong>
+                    <strong id="resumen-total">S/ {total_vendido:.2f}</strong>
                 </div>
             </section>
 
@@ -569,6 +609,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 <div class="panel-title">
                     Buscar ventas por cliente
                     <span class="method">API</span>
+                    <span class="live-status" id="live-status">Actualizacion automatica activa</span>
                 </div>
 
                 <div class="filtros">
@@ -577,8 +618,8 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                         <input id="filtro-id" type="number" placeholder="Ej. 42">
                     </div>
                     <div>
-                        <label for="filtro-texto">Cliente, DNI o email</label>
-                        <input id="filtro-texto" type="text" placeholder="Ej. Mary...">
+                        <label for="filtro-texto">Cliente, DNI, email o pais</label>
+                        <input id="filtro-texto" type="text" placeholder="Ej. Peru, Mary...">
                     </div>
                     <div>
                         <label for="filtro-tienda">Tienda</label>
@@ -632,7 +673,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         </main>
     </div>
     <script>
-        const reporte = {reporte_json};
+        let reporte = {reporte_json};
         const filasPorPagina = 10;
         let paginaActual = 1;
         let filtrado = [...reporte];
@@ -644,6 +685,10 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         const filtroTexto = document.getElementById("filtro-texto");
         const filtroTienda = document.getElementById("filtro-tienda");
         const filtroEstado = document.getElementById("filtro-estado");
+        const resumenClientes = document.getElementById("resumen-clientes");
+        const resumenVentas = document.getElementById("resumen-ventas");
+        const resumenTotal = document.getElementById("resumen-total");
+        const liveStatus = document.getElementById("live-status");
 
         function escapeHtml(value) {{
             return String(value ?? "")
@@ -673,6 +718,15 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             renderTabla();
         }}
 
+        function actualizarResumen() {{
+            const totalVentas = reporte.reduce((suma, row) => suma + Number(row.cantidad_ventas || 0), 0);
+            const totalVendido = reporte.reduce((suma, row) => suma + Number(row.total_vendido || 0), 0);
+
+            resumenClientes.textContent = reporte.length;
+            resumenVentas.textContent = totalVentas;
+            resumenTotal.textContent = `S/ ${{totalVendido.toFixed(2)}}`;
+        }}
+
         function renderTabla() {{
             const totalPaginas = Math.max(1, Math.ceil(filtrado.length / filasPorPagina));
             paginaActual = Math.min(paginaActual, totalPaginas);
@@ -682,7 +736,11 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             if (pagina.length === 0) {{
                 tablaBody.innerHTML = '<tr><td class="empty-row" colspan="11">No se encontraron resultados.</td></tr>';
             }} else {{
-                tablaBody.innerHTML = pagina.map((row, index) => `
+                tablaBody.innerHTML = pagina.map((row, index) => {{
+                    const estadoValor = String(row.estado ?? "").toLowerCase();
+                    const estadoClase = estadoValor === "inactivo" ? "estado-inactivo" : "estado-activo";
+
+                    return `
                     <tr>
                         <td>${{inicio + index + 1}}</td>
                         <td>${{escapeHtml(row.cliente_id)}}</td>
@@ -692,17 +750,38 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                         <td title="${{escapeHtml(row.ciudad)}}">${{escapeHtml(row.ciudad)}}</td>
                         <td title="${{escapeHtml(row.pais)}}">${{escapeHtml(row.pais)}}</td>
                         <td>Tienda ${{escapeHtml(row.tienda)}}</td>
-                        <td><span class="estado">${{escapeHtml(row.estado)}}</span></td>
+                        <td><span class="estado ${{estadoClase}}">${{escapeHtml(row.estado)}}</span></td>
                         <td>${{escapeHtml(row.cantidad_ventas)}}</td>
                         <td><span class="total">S/ ${{Number(row.total_vendido).toFixed(2)}}</span></td>
                     </tr>
-                `).join("");
+                    `;
+                }}).join("");
             }}
 
             resultadoInfo.innerHTML = `Se encontraron <strong>${{filtrado.length}}</strong> clientes - mostrando ${{pagina.length}} en esta pagina`;
             paginaInfo.textContent = `Pagina ${{paginaActual}} de ${{totalPaginas}}`;
             document.getElementById("btn-anterior").disabled = paginaActual === 1;
             document.getElementById("btn-siguiente").disabled = paginaActual === totalPaginas;
+        }}
+
+        async function actualizarDatosEnVivo() {{
+            try {{
+                const respuesta = await fetch("/api/ventas-por-cliente?pagina=1&por_pagina=1000", {{
+                    cache: "no-store"
+                }});
+
+                if (!respuesta.ok) {{
+                    throw new Error(`HTTP ${{respuesta.status}}`);
+                }}
+
+                const data = await respuesta.json();
+                reporte = Array.isArray(data.items) ? data.items : [];
+                actualizarResumen();
+                aplicarFiltros();
+                liveStatus.textContent = `Actualizado ${{new Date().toLocaleTimeString()}}`;
+            }} catch (error) {{
+                liveStatus.textContent = "No se pudo actualizar automaticamente";
+            }}
         }}
 
         document.getElementById("btn-buscar").addEventListener("click", aplicarFiltros);
@@ -728,7 +807,9 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             control.addEventListener("change", aplicarFiltros);
         }});
 
+        actualizarResumen();
         renderTabla();
+        setInterval(actualizarDatosEnVivo, 10000);
     </script>
 </body>
 </html>
