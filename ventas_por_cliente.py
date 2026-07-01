@@ -10,17 +10,14 @@ import webbrowser
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
-
 from dotenv import load_dotenv
 
 
 load_dotenv()
 
-# Este modulo trabaja solo con APIs. No se conecta directo a Supabase ni a otra BD.
 CLIENTES_API_URL = os.getenv("CLIENTES_API_URL", "http://35.239.247.220:8001").rstrip("/")
 CLIENTES_API_ENDPOINT = os.getenv("CLIENTES_API_ENDPOINT", "/clientes")
 
-# Coloca aqui la API de ventas/pagos cuando el responsable del modulo la comparta.
 VENTAS_API_URL = os.getenv("VENTAS_API_URL", "").rstrip("/")
 VENTAS_API_ENDPOINT = os.getenv("VENTAS_API_ENDPOINT", "/pagos")
 
@@ -266,6 +263,18 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             margin-left: auto;
         }}
 
+        .theme-toggle {{
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #ffffff;
+        }}
+
+        .theme-toggle:hover {{
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.34);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.24);
+        }}
+
         main {{
             padding: 22px 24px;
         }}
@@ -465,22 +474,21 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             top: 0;
         }}
 
-        th:nth-child(1), td:nth-child(1) {{ width: 34px; }}
-        th:nth-child(2), td:nth-child(2) {{ width: 72px; }}
-        th:nth-child(3), td:nth-child(3) {{ width: 150px; }}
-        th:nth-child(4), td:nth-child(4) {{ width: 88px; }}
-        th:nth-child(5), td:nth-child(5) {{ width: 210px; }}
-        th:nth-child(6), td:nth-child(6) {{ width: 130px; }}
-        th:nth-child(7), td:nth-child(7) {{ width: 120px; }}
-        th:nth-child(8), td:nth-child(8) {{ width: 74px; }}
-        th:nth-child(9), td:nth-child(9) {{ width: 78px; }}
-        th:nth-child(10), td:nth-child(10) {{ width: 92px; }}
-        th:nth-child(11), td:nth-child(11) {{ width: 96px; }}
+        th:nth-child(1), td:nth-child(1) {{ width: 72px; }}
+        th:nth-child(2), td:nth-child(2) {{ width: 150px; }}
+        th:nth-child(3), td:nth-child(3) {{ width: 88px; }}
+        th:nth-child(4), td:nth-child(4) {{ width: 210px; }}
+        th:nth-child(5), td:nth-child(5) {{ width: 130px; }}
+        th:nth-child(6), td:nth-child(6) {{ width: 120px; }}
+        th:nth-child(7), td:nth-child(7) {{ width: 74px; }}
+        th:nth-child(8), td:nth-child(8) {{ width: 78px; }}
+        th:nth-child(9), td:nth-child(9) {{ width: 92px; }}
+        th:nth-child(10), td:nth-child(10) {{ width: 96px; }}
 
-        td:nth-child(3),
+        td:nth-child(2),
+        td:nth-child(4),
         td:nth-child(5),
-        td:nth-child(6),
-        td:nth-child(7) {{
+        td:nth-child(6) {{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -534,8 +542,8 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             text-align: center;
         }}
 
-        td:nth-child(10),
-        td:nth-child(11) {{
+        td:nth-child(9),
+        td:nth-child(10) {{
             text-align: right;
         }}
 
@@ -571,6 +579,87 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 min-width: 1120px;
             }}
         }}
+
+        body.dark-mode {{
+            background: #0f172a;
+            color: #e5eefc;
+        }}
+
+        body.dark-mode aside {{
+            background: #0b1220;
+            border-bottom: 1px solid #22314d;
+        }}
+
+        body.dark-mode main {{
+            background: #0f172a;
+        }}
+
+        body.dark-mode .card,
+        body.dark-mode .panel,
+        body.dark-mode .tabla-wrap {{
+            background: #1e293b;
+            border-color: #334155;
+        }}
+
+        body.dark-mode .subtitulo,
+        body.dark-mode .card span,
+        body.dark-mode label,
+        body.dark-mode .resultado-info,
+        body.dark-mode .pager span,
+        body.dark-mode .live-status {{
+            color: #9fb2d0;
+        }}
+
+        body.dark-mode input,
+        body.dark-mode select {{
+            background: #162235;
+            border-color: #40516d;
+            color: #e5eefc;
+        }}
+
+        body.dark-mode input::placeholder {{
+            color: #7286a6;
+        }}
+
+        body.dark-mode th {{
+            background: #1e293b;
+            border-bottom-color: #40516d;
+            color: #9fb2d0;
+        }}
+
+        body.dark-mode td {{
+            border-bottom-color: #334155;
+        }}
+
+        body.dark-mode tr:nth-child(even) {{
+            background: #172238;
+        }}
+
+        body.dark-mode .btn-light {{
+            background: #1e293b;
+            border-color: #40516d;
+            color: #6ea8ff;
+        }}
+
+        body.dark-mode .btn-light:hover {{
+            background: #24324a;
+            border-color: #5b75a4;
+        }}
+
+        body.dark-mode .method {{
+            background: #23395f;
+            color: #9cc4ff;
+        }}
+
+        body.dark-mode .estado-activo {{
+            background: #bbf7d0;
+            color: #047857;
+        }}
+
+        body.dark-mode .estado-inactivo {{
+            background: #fecaca;
+            color: #991b1b;
+        }}
     </style>
 </head>
 <body>
@@ -579,6 +668,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             <h2>Sakila</h2>
             <p>Sistema Distribuido</p>
             <div class="nav-item">Ventas por Cliente</div>
+            <button class="theme-toggle" id="theme-toggle" type="button">Modo oscuro</button>
         </aside>
 
         <main>
@@ -648,7 +738,6 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 <table>
                     <thead>
                         <tr>
-                            <th>#</th>
                             <th>ID Cliente</th>
                             <th>Cliente</th>
                             <th>DNI</th>
@@ -689,6 +778,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         const resumenVentas = document.getElementById("resumen-ventas");
         const resumenTotal = document.getElementById("resumen-total");
         const liveStatus = document.getElementById("live-status");
+        const themeToggle = document.getElementById("theme-toggle");
 
         function escapeHtml(value) {{
             return String(value ?? "")
@@ -734,7 +824,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             const pagina = filtrado.slice(inicio, inicio + filasPorPagina);
 
             if (pagina.length === 0) {{
-                tablaBody.innerHTML = '<tr><td class="empty-row" colspan="11">No se encontraron resultados.</td></tr>';
+                tablaBody.innerHTML = '<tr><td class="empty-row" colspan="10">No se encontraron resultados.</td></tr>';
             }} else {{
                 tablaBody.innerHTML = pagina.map((row, index) => {{
                     const estadoValor = String(row.estado ?? "").toLowerCase();
@@ -742,7 +832,6 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
                     return `
                     <tr>
-                        <td>${{inicio + index + 1}}</td>
                         <td>${{escapeHtml(row.cliente_id)}}</td>
                         <td title="${{escapeHtml(row.cliente)}}">${{escapeHtml(row.cliente)}}</td>
                         <td>${{escapeHtml(row.dni)}}</td>
@@ -784,6 +873,18 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             }}
         }}
 
+        function aplicarTema(theme) {{
+            const dark = theme === "dark";
+            document.body.classList.toggle("dark-mode", dark);
+            themeToggle.textContent = dark ? "Modo claro" : "Modo oscuro";
+            localStorage.setItem("ventas-theme", theme);
+        }}
+
+        themeToggle.addEventListener("click", () => {{
+            const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+            aplicarTema(nextTheme);
+        }});
+
         document.getElementById("btn-buscar").addEventListener("click", aplicarFiltros);
         document.getElementById("btn-limpiar").addEventListener("click", () => {{
             filtroId.value = "";
@@ -809,6 +910,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
         actualizarResumen();
         renderTabla();
+        aplicarTema(localStorage.getItem("ventas-theme") || "light");
         setInterval(actualizarDatosEnVivo, 10000);
     </script>
 </body>
