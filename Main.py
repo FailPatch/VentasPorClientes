@@ -1,3 +1,4 @@
+from datetime import datetime
 from math import ceil
 
 from fastapi import FastAPI, HTTPException, Query
@@ -18,13 +19,58 @@ app = FastAPI(
 )
 
 
+ULTIMO_REPORTE_VALIDO = {
+    "items": [],
+    "modo": "sin_datos",
+    "mensaje": "",
+    "actualizado": None,
+}
+
+
+def guardar_cache(reporte, modo, mensaje=""):
+    ULTIMO_REPORTE_VALIDO["items"] = reporte
+    ULTIMO_REPORTE_VALIDO["modo"] = modo
+    ULTIMO_REPORTE_VALIDO["mensaje"] = mensaje
+    ULTIMO_REPORTE_VALIDO["actualizado"] = datetime.now().isoformat(timespec="seconds")
+
+
+def obtener_cache():
+    return ULTIMO_REPORTE_VALIDO["items"]
+
+
 def obtener_reporte(desde=None, hasta=None):
     try:
         clientes = fetch_clientes_api()
         ventas = fetch_ventas_api(desde, hasta)
-        return build_reporte(ventas, clientes)
+        reporte = build_reporte(ventas, clientes)
+        guardar_cache(reporte, "completo")
+        return reporte
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+
+def obtener_reporte_con_recuperacion(desde=None, hasta=None):
+    try:
+        reporte = obtener_reporte(desde, hasta)
+        return reporte, "completo", "Datos actualizados desde APIs."
+    except HTTPException as exc:
+        try:
+            reporte = obtener_reporte_solo_clientes()
+            guardar_cache(
+                reporte,
+                "solo_clientes",
+                "API de ventas no disponible. Mostrando clientes con ventas en 0.",
+            )
+            return reporte, "solo_clientes", str(exc.detail)
+        except Exception:
+            reporte = obtener_cache()
+            if reporte:
+                return (
+                    reporte,
+                    "cache",
+                    "Fallo la comunicacion con las APIs. Mostrando ultima informacion valida.",
+                )
+            raise exc
 
 
 def filtrar_reporte(reporte, cliente_id=None, nombre=None, tienda=None, estado=None):
@@ -55,12 +101,8 @@ def filtrar_reporte(reporte, cliente_id=None, nombre=None, tienda=None, estado=N
 
 @app.get("/", response_class=HTMLResponse)
 def interfaz(desde: str | None = None, hasta: str | None = None):
-    try:
-        reporte = obtener_reporte(desde, hasta)
-        return build_html_content(reporte, desde, hasta)
-    except HTTPException:
-        reporte = obtener_reporte_solo_clientes()
-        return build_html_content(reporte, desde, hasta)
+    reporte, _, _ = obtener_reporte_con_recuperacion(desde, hasta)
+    return build_html_content(reporte, desde, hasta)
 
 
 def obtener_reporte_solo_clientes():
@@ -117,10 +159,7 @@ def listar_ventas_por_cliente(
     pagina: int = Query(default=1, ge=1),
     por_pagina: int = Query(default=10, ge=1, le=1000),
 ):
-    try:
-        reporte = obtener_reporte(desde, hasta)
-    except HTTPException:
-        reporte = obtener_reporte_solo_clientes()
+    reporte, modo, mensaje = obtener_reporte_con_recuperacion(desde, hasta)
     filtrado = filtrar_reporte(reporte, cliente_id, nombre, tienda, estado)
 
     total = len(filtrado)
@@ -133,6 +172,9 @@ def listar_ventas_por_cliente(
         "pagina": pagina,
         "por_pagina": por_pagina,
         "total_paginas": total_paginas,
+        "modo": modo,
+        "mensaje": mensaje,
+        "cache_actualizado": ULTIMO_REPORTE_VALIDO["actualizado"],
         "items": filtrado[inicio:fin],
     }
 
@@ -143,10 +185,7 @@ def obtener_ventas_de_cliente(
     desde: str | None = Query(default=None, description="Fecha inicial YYYY-MM-DD"),
     hasta: str | None = Query(default=None, description="Fecha final YYYY-MM-DD"),
 ):
-    try:
-        reporte = obtener_reporte(desde, hasta)
-    except HTTPException:
-        reporte = obtener_reporte_solo_clientes()
+    reporte, _, _ = obtener_reporte_con_recuperacion(desde, hasta)
 
     for row in reporte:
         if int(row["cliente_id"]) == customer_id:
