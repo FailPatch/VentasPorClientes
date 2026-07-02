@@ -18,7 +18,7 @@ load_dotenv()
 CLIENTES_API_URL = os.getenv("CLIENTES_API_URL", "http://35.239.247.220:8001").rstrip("/")
 CLIENTES_API_ENDPOINT = os.getenv("CLIENTES_API_ENDPOINT", "/clientes")
 
-VENTAS_API_URL = os.getenv("VENTAS_API_URL", "").rstrip("/")
+VENTAS_API_URL = os.getenv("VENTAS_API_URL", "https://final-distribuidos.versel.app/").rstrip("/")
 VENTAS_API_ENDPOINT = os.getenv("VENTAS_API_ENDPOINT", "/pagos")
 
 API_PAGE_SIZE = int(os.getenv("API_PAGE_SIZE", "100"))
@@ -443,6 +443,16 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             margin-left: auto;
         }}
 
+        .live-status.warning {{
+            color: #b45309;
+            font-weight: 700;
+        }}
+
+        .live-status.danger {{
+            color: #b91c1c;
+            font-weight: 700;
+        }}
+
         .tabla-wrap {{
             background: #ffffff;
             border: 1px solid #d9e2ec;
@@ -699,7 +709,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 <div class="panel-title">
                     Buscar ventas por cliente
                     <span class="method">API</span>
-                    <span class="live-status" id="live-status">Actualizacion automatica activa</span>
+                    <span class="live-status" id="live-status">Actualizacion automatica cada 3 segundos</span>
                 </div>
 
                 <div class="filtros">
@@ -867,8 +877,18 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 reporte = Array.isArray(data.items) ? data.items : [];
                 actualizarResumen();
                 aplicarFiltros();
-                liveStatus.textContent = `Actualizado ${{new Date().toLocaleTimeString()}}`;
+                liveStatus.classList.remove("warning", "danger");
+                if (data.modo === "cache") {{
+                    liveStatus.classList.add("danger");
+                    liveStatus.textContent = `Usando cache: ${{data.cache_actualizado || "sin fecha"}}`;
+                }} else if (data.modo === "solo_clientes") {{
+                    liveStatus.classList.add("warning");
+                    liveStatus.textContent = `Clientes actualizados ${{new Date().toLocaleTimeString()}} - ventas pendientes`;
+                }} else {{
+                    liveStatus.textContent = `Actualizado ${{new Date().toLocaleTimeString()}}`;
+                }}
             }} catch (error) {{
+                liveStatus.classList.add("danger");
                 liveStatus.textContent = "No se pudo actualizar automaticamente";
             }}
         }}
@@ -911,7 +931,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         actualizarResumen();
         renderTabla();
         aplicarTema(localStorage.getItem("ventas-theme") || "light");
-        setInterval(actualizarDatosEnVivo, 10000);
+        setInterval(actualizarDatosEnVivo, 3000);
     </script>
 </body>
 </html>
