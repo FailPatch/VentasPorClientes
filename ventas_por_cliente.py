@@ -18,8 +18,12 @@ load_dotenv()
 CLIENTES_API_URL = os.getenv("CLIENTES_API_URL", "http://35.239.247.220:8001").rstrip("/")
 CLIENTES_API_ENDPOINT = os.getenv("CLIENTES_API_ENDPOINT", "/clientes")
 
-VENTAS_API_URL = os.getenv("VENTAS_API_URL", "https://final-distribuidos.versel.app/").rstrip("/")
-VENTAS_API_ENDPOINT = os.getenv("VENTAS_API_ENDPOINT", "/pagos")
+VENTAS_API_URL = os.getenv("VENTAS_API_URL", "http://34.176.33.216:8000").rstrip("/")
+VENTAS_API_ENDPOINT = os.getenv("VENTAS_API_ENDPOINT", "/payments/view-payments")
+VENTAS_API_PAGINATED = os.getenv("VENTAS_API_PAGINATED", "false").lower() == "true"
+VENTAS_API_DEFAULT_STATUS = os.getenv("VENTAS_API_DEFAULT_STATUS", "PAGADO")
+VENTAS_API_DAY = os.getenv("VENTAS_API_DAY", "false").lower() == "true"
+VENTAS_API_WEEK = os.getenv("VENTAS_API_WEEK", "false").lower() == "true"
 
 API_PAGE_SIZE = int(os.getenv("API_PAGE_SIZE", "100"))
 API_TIMEOUT = int(os.getenv("API_TIMEOUT", "15"))
@@ -28,6 +32,8 @@ API_TIMEOUT = int(os.getenv("API_TIMEOUT", "15"))
 VENTA_CLIENTE_ID_FIELD = os.getenv("VENTA_CLIENTE_ID_FIELD", "customer_id")
 VENTA_TOTAL_FIELD = os.getenv("VENTA_TOTAL_FIELD", "amount")
 VENTA_FECHA_FIELD = os.getenv("VENTA_FECHA_FIELD", "payment_date")
+VENTA_STATUS_FIELD = os.getenv("VENTA_STATUS_FIELD", "status")
+VENTA_STATUS_PERMITIDO = os.getenv("VENTA_STATUS_PERMITIDO", "PAGADO")
 
 
 def api_get_json(base_url, path, params=None):
@@ -129,11 +135,20 @@ def fetch_ventas_api(fecha_inicio=None, fecha_fin=None):
             "necesitas que el modulo de ventas/pagos exponga una API."
         )
 
-    params = {"pagina": 1, "por_pagina": API_PAGE_SIZE}
-    if fecha_inicio:
-        params["desde"] = fecha_inicio
-    if fecha_fin:
-        params["hasta"] = fecha_fin
+    params = {}
+    if VENTAS_API_DEFAULT_STATUS:
+        params["status"] = VENTAS_API_DEFAULT_STATUS
+    if VENTAS_API_DAY:
+        params["day"] = "true"
+    if VENTAS_API_WEEK:
+        params["week"] = "true"
+
+    if not VENTAS_API_PAGINATED:
+        data = api_get_json(VENTAS_API_URL, VENTAS_API_ENDPOINT, params)
+        return filtrar_ventas_por_estado(extract_items(data))
+
+    params["pagina"] = 1
+    params["por_pagina"] = API_PAGE_SIZE
 
     ventas = []
     pagina = 1
@@ -144,9 +159,29 @@ def fetch_ventas_api(fecha_inicio=None, fecha_fin=None):
         ventas.extend(extract_items(data))
 
         if pagina >= get_total_paginas(data, pagina):
-            return ventas
+            return filtrar_ventas_por_estado(ventas)
 
         pagina += 1
+
+
+def filtrar_ventas_por_estado(ventas):
+    if not VENTA_STATUS_PERMITIDO:
+        return ventas
+
+    estados_permitidos = {
+        estado.strip().upper()
+        for estado in VENTA_STATUS_PERMITIDO.split(",")
+        if estado.strip()
+    }
+
+    if not estados_permitidos:
+        return ventas
+
+    return [
+        venta
+        for venta in ventas
+        if str(venta.get(VENTA_STATUS_FIELD, "")).upper() in estados_permitidos
+    ]
 
 
 def build_reporte(ventas, clientes):
@@ -164,8 +199,11 @@ def build_reporte(ventas, clientes):
         resumen[cliente_id]["total_vendido"] += total
 
     reporte = []
-    for cliente_id, valores in resumen.items():
-        cliente = clientes.get(cliente_id, {})
+    for cliente_id, cliente in clientes.items():
+        valores = resumen.get(
+            cliente_id,
+            {"cantidad_ventas": 0, "total_vendido": 0.0},
+        )
         reporte.append(
             {
                 "cliente_id": cliente_id,
@@ -181,7 +219,28 @@ def build_reporte(ventas, clientes):
             }
         )
 
-    return sorted(reporte, key=lambda row: row["total_vendido"], reverse=True)
+    clientes_sin_registro = set(resumen) - set(clientes)
+    for cliente_id in clientes_sin_registro:
+        valores = resumen[cliente_id]
+        reporte.append(
+            {
+                "cliente_id": cliente_id,
+                "cliente": "Cliente no encontrado",
+                "dni": "",
+                "email": "",
+                "ciudad": "",
+                "pais": "",
+                "tienda": "",
+                "estado": "",
+                "cantidad_ventas": valores["cantidad_ventas"],
+                "total_vendido": round(valores["total_vendido"], 2),
+            }
+        )
+
+    return sorted(
+        reporte,
+        key=lambda row: (-row["total_vendido"], row["cliente_id"]),
+    )
 
 
 def export_csv(reporte, output_path):
@@ -206,9 +265,14 @@ def export_csv(reporte, output_path):
 
 
 def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
-    total_clientes = len(reporte)
-    total_ventas = sum(row["cantidad_ventas"] for row in reporte)
-    total_vendido = sum(row["total_vendido"] for row in reporte)
+    activos_iniciales = [
+        row
+        for row in reporte
+        if str(row.get("estado", "")).lower() == "activo"
+    ]
+    total_clientes = len(activos_iniciales)
+    total_ventas = sum(row["cantidad_ventas"] for row in activos_iniciales)
+    total_vendido = sum(row["total_vendido"] for row in activos_iniciales)
     rango = build_rango_texto(fecha_inicio, fecha_fin)
     reporte_json = json.dumps(reporte, ensure_ascii=False)
 
@@ -361,7 +425,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
         .filtros {{
             display: grid;
-            grid-template-columns: 150px minmax(220px, 1fr) 130px 140px auto auto;
+            grid-template-columns: 150px minmax(220px, 1fr) 130px auto auto;
             gap: 12px;
             align-items: end;
         }}
@@ -552,6 +616,44 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             text-align: center;
         }}
 
+        .inactive-section {{
+            margin-top: 18px;
+        }}
+
+        .inactive-section details {{
+            background: #ffffff;
+            border: 1px solid #d9e2ec;
+            border-radius: 8px;
+            overflow: hidden;
+        }}
+
+        .inactive-section summary {{
+            cursor: pointer;
+            font-weight: 800;
+            list-style: none;
+            padding: 14px 16px;
+        }}
+
+        .inactive-section summary::-webkit-details-marker {{
+            display: none;
+        }}
+
+        .inactive-section summary::after {{
+            content: "Ver apartado";
+            color: #2f6fed;
+            float: right;
+            font-size: 13px;
+        }}
+
+        .inactive-section details[open] summary::after {{
+            content: "Ocultar";
+        }}
+
+        .inactive-table {{
+            border-top: 1px solid #edf2f7;
+            overflow: auto;
+        }}
+
         td:nth-child(9),
         td:nth-child(10) {{
             text-align: right;
@@ -606,7 +708,8 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
         body.dark-mode .card,
         body.dark-mode .panel,
-        body.dark-mode .tabla-wrap {{
+        body.dark-mode .tabla-wrap,
+        body.dark-mode .inactive-section details {{
             background: #1e293b;
             border-color: #334155;
         }}
@@ -676,8 +779,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
     <div class="layout">
         <aside>
             <h2>Sakila</h2>
-            <p>Sistema Distribuido</p>
-            <div class="nav-item">Ventas por Cliente</div>
+            <p>Ventas por Cliente</p>
             <button class="theme-toggle" id="theme-toggle" type="button">Modo oscuro</button>
         </aside>
 
@@ -692,7 +794,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
             <section class="resumen">
                 <div class="card">
-                    <span>Clientes con ventas</span>
+                    <span>Clientes activos</span>
                     <strong id="resumen-clientes">{total_clientes}</strong>
                 </div>
                 <div class="card">
@@ -729,14 +831,6 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                             <option value="2">Tienda 2</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="filtro-estado">Estado</label>
-                        <select id="filtro-estado">
-                            <option value="">Todos</option>
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
-                    </div>
                     <button class="btn-primary" id="btn-buscar" type="button">Buscar</button>
                     <button class="btn-light" id="btn-limpiar" type="button">Limpiar</button>
                 </div>
@@ -769,21 +863,47 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 <span id="pagina-info"></span>
                 <button class="btn-light" id="btn-siguiente" type="button">Siguiente</button>
             </div>
+
+            <section class="inactive-section">
+                <details>
+                    <summary>Clientes inactivos (<span id="inactive-count">0</span>)</summary>
+                    <div class="inactive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Cliente</th>
+                                    <th>Cliente</th>
+                                    <th>DNI</th>
+                                    <th>Email</th>
+                                    <th>Ciudad</th>
+                                    <th>Pais</th>
+                                    <th>Tienda</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inactive-body"></tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
         </main>
     </div>
     <script>
         let reporte = {reporte_json};
         const filasPorPagina = 10;
         let paginaActual = 1;
-        let filtrado = [...reporte];
+        let activos = [];
+        let inactivos = [];
+        let filtrado = [];
 
         const tablaBody = document.getElementById("tabla-body");
+        const inactiveBody = document.getElementById("inactive-body");
+        const inactiveCount = document.getElementById("inactive-count");
         const paginaInfo = document.getElementById("pagina-info");
         const resultadoInfo = document.getElementById("resultado-info");
         const filtroId = document.getElementById("filtro-id");
         const filtroTexto = document.getElementById("filtro-texto");
         const filtroTienda = document.getElementById("filtro-tienda");
-        const filtroEstado = document.getElementById("filtro-estado");
         const resumenClientes = document.getElementById("resumen-clientes");
         const resumenVentas = document.getElementById("resumen-ventas");
         const resumenTotal = document.getElementById("resumen-total");
@@ -799,19 +919,27 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
                 .replaceAll("'", "&#039;");
         }}
 
+        function esActivo(row) {{
+            return String(row.estado ?? "").toLowerCase() === "activo";
+        }}
+
+        function separarPorEstado() {{
+            activos = reporte.filter(esActivo);
+            inactivos = reporte.filter((row) => !esActivo(row));
+            renderInactivos();
+        }}
+
         function aplicarFiltros() {{
             const id = filtroId.value.trim();
             const texto = filtroTexto.value.trim().toLowerCase();
             const tienda = filtroTienda.value;
-            const estado = filtroEstado.value;
 
-            filtrado = reporte.filter((row) => {{
+            filtrado = activos.filter((row) => {{
                 const coincideId = !id || String(row.cliente_id) === id;
                 const bolsaTexto = `${{row.cliente}} ${{row.dni}} ${{row.email}} ${{row.ciudad}} ${{row.pais}}`.toLowerCase();
                 const coincideTexto = !texto || bolsaTexto.includes(texto);
                 const coincideTienda = !tienda || String(row.tienda) === tienda;
-                const coincideEstado = !estado || String(row.estado).toLowerCase() === estado;
-                return coincideId && coincideTexto && coincideTienda && coincideEstado;
+                return coincideId && coincideTexto && coincideTienda;
             }});
 
             paginaActual = 1;
@@ -819,12 +947,34 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
         }}
 
         function actualizarResumen() {{
-            const totalVentas = reporte.reduce((suma, row) => suma + Number(row.cantidad_ventas || 0), 0);
-            const totalVendido = reporte.reduce((suma, row) => suma + Number(row.total_vendido || 0), 0);
+            const totalVentas = activos.reduce((suma, row) => suma + Number(row.cantidad_ventas || 0), 0);
+            const totalVendido = activos.reduce((suma, row) => suma + Number(row.total_vendido || 0), 0);
 
-            resumenClientes.textContent = reporte.length;
+            resumenClientes.textContent = activos.length;
             resumenVentas.textContent = totalVentas;
             resumenTotal.textContent = `S/ ${{totalVendido.toFixed(2)}}`;
+        }}
+
+        function renderInactivos() {{
+            inactiveCount.textContent = inactivos.length;
+
+            if (inactivos.length === 0) {{
+                inactiveBody.innerHTML = '<tr><td class="empty-row" colspan="8">No hay clientes inactivos.</td></tr>';
+                return;
+            }}
+
+            inactiveBody.innerHTML = inactivos.map((row) => `
+                <tr>
+                    <td>${{escapeHtml(row.cliente_id)}}</td>
+                    <td title="${{escapeHtml(row.cliente)}}">${{escapeHtml(row.cliente)}}</td>
+                    <td>${{escapeHtml(row.dni)}}</td>
+                    <td title="${{escapeHtml(row.email)}}">${{escapeHtml(row.email)}}</td>
+                    <td title="${{escapeHtml(row.ciudad)}}">${{escapeHtml(row.ciudad)}}</td>
+                    <td title="${{escapeHtml(row.pais)}}">${{escapeHtml(row.pais)}}</td>
+                    <td>Tienda ${{escapeHtml(row.tienda)}}</td>
+                    <td><span class="estado estado-inactivo">${{escapeHtml(row.estado)}}</span></td>
+                </tr>
+            `).join("");
         }}
 
         function renderTabla() {{
@@ -875,6 +1025,7 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
 
                 const data = await respuesta.json();
                 reporte = Array.isArray(data.items) ? data.items : [];
+                separarPorEstado();
                 actualizarResumen();
                 aplicarFiltros();
                 liveStatus.classList.remove("warning", "danger");
@@ -910,7 +1061,6 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             filtroId.value = "";
             filtroTexto.value = "";
             filtroTienda.value = "";
-            filtroEstado.value = "";
             aplicarFiltros();
         }});
         document.getElementById("btn-anterior").addEventListener("click", () => {{
@@ -921,15 +1071,16 @@ def build_html_content(reporte, fecha_inicio=None, fecha_fin=None):
             paginaActual += 1;
             renderTabla();
         }});
-        [filtroId, filtroTexto, filtroTienda, filtroEstado].forEach((control) => {{
+        [filtroId, filtroTexto, filtroTienda].forEach((control) => {{
             control.addEventListener("keydown", (event) => {{
                 if (event.key === "Enter") aplicarFiltros();
             }});
             control.addEventListener("change", aplicarFiltros);
         }});
 
+        separarPorEstado();
         actualizarResumen();
-        renderTabla();
+        aplicarFiltros();
         aplicarTema(localStorage.getItem("ventas-theme") || "light");
         setInterval(actualizarDatosEnVivo, 3000);
     </script>
